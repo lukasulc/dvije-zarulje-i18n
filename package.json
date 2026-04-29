@@ -1,0 +1,27 @@
+{
+	"name": "advanced-astro-i18n",
+	"type": "module",
+	"version": "3.0.2",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"remove-demo": "node scripts/remove-demo.js",
+		"remove-dark-mode": "node scripts/remove-dark-mode.js",
+		"remove-decap": "node scripts/remove-decap.js",
+		"config-i18n": "node scripts/config-i18n.js",
+		"create-page": "node scripts/create-page.js"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "^3.7.2",
+		"astro": "^6.0.8",
+		"astro-icon": "^1.1.5",
+		"autoprefixer": "^10.4.27",
+		"less": "^4.5.1"
+	},
+	"devDependencies": {
+		"slugify": "^1.6.9"
+	}
+}
