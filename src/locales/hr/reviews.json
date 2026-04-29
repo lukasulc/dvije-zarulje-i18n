@@ -1,38 +1,68 @@
 {
-	"landing": "Recenzije",
-	"topper": "Iskustva gostiju",
-	"title": "Komentari iz svakodnevne ponude",
-	"p": "Gosti Dvije Žarulje najčešće traže grill, dnevna jela, brzu uslugu i opcije za narudžbu za van.",
-	"testimonials": [
-		{
-			"quote": "Dobra opcija za brz ručak u Zagrebu kada želite roštilj i konkretne porcije.",
-			"name": "Gost",
-			"role": "Grill ponuda"
-		},
-		{
-			"quote": "Dnevna jela su praktična kada treba nešto toplo, domaće i jednostavno.",
-			"name": "Kupac",
-			"role": "Dnevna jela"
-		},
-		{
-			"quote": "Ćevapi, pljeskavice i pileći grill pokrivaju sve što očekujem od kvartovskog grilla.",
-			"name": "Stalni gost",
-			"role": "Ručak"
-		},
-		{
-			"quote": "Dobro mjesto za preuzeti hranu kad nemate vremena za kuhanje.",
-			"name": "Kupac za van",
-			"role": "Takeaway"
-		},
-		{
-			"quote": "Ponuda je jasna, porcije su konkretne, a okusi poznati i domaći.",
-			"name": "Gost restorana",
-			"role": "Bistro"
-		},
-		{
-			"quote": "Salate i prilozi dobro zaokruže narudžbu, posebno uz grill jela.",
-			"name": "Kupac",
-			"role": "Prilozi"
-		}
-	]
+  "landing": "Recenzije",
+  "topper": "Iskustva gostiju",
+  "title": "Komentari iz svakodnevne ponude",
+  "p": "Gosti Dvije Žarulje najčešće traže grill, dnevna jela i brzu uslugu",
+  "testimonials": [
+    {
+      "quote": "I gazda i osoblje vrlo ljubazni, hrana odlična, cijene ok.... Za svaku pohvalu... A tek roštilj... Bomba",
+      "name": "Davor",
+      "role": "Jela s roštilja"
+    },
+    {
+      "quote": "Hrana vrhunska i osjeti se fantastičan miris pravog roštilja. Za svaku pohvalu i hrana i ambijent!",
+      "name": "Mandica",
+      "role": "Grill ponuda"
+    },
+    {
+      "quote": "Dobra opcija za brz ručak u Zagrebu kada želite konkretne porcije.",
+      "name": "Luka",
+      "role": "Ručak"
+    },
+    {
+      "quote": "Čevapi su TOP svaki put ,meso je savršeno baš je meso i točno dugo nisam jela čevape koji imaju pravii okus mesa ,nećete požalit doć ,odmah pokraj restorana je i park pa ako dođete s klincima mogu se igrat imaju i gablece u ponudi TOP 💪👌",
+      "name": "Maja",
+      "role": "Jela s roštilja"
+    },
+    {
+      "quote": "Danas smo prvi put sjeli u Dvije žarulje na brzinski ručak, ostali oduševljeni i jelom i uslugom - kelj varivo preuksuno, kao bakino, a pljeskavica izvrsno pečena, sočna i začinjena. Hrana kvalitetom parira puno skupljim restoranima. Svakako se vraćamo!",
+      "name": "Andrea",
+      "role": "Dnevna jela"
+    },
+    {
+      "quote": "Fantastična hrana. Sve se svježe priprema.  Svaki dan za gablec ima tri menia i uvijek ima roštilj koji je za svaku preporuku. Jedini je problem što gazda radi sam pa se malo duže čeka na narudžbu ali u svakom slučaju se isplati pričekati. Restoran se iz vana čini neugledan ali hrana je stvarno odlična!",
+      "name": "Helena",
+      "role": "Gablec"
+    },
+    {
+      "quote": "Vrlo sam zadovoljan cijenom i okusom. Dapače ugodno iznenađen napokon. Svakako preporučujem platu jer sigurno od tamo pa i četvero ljidi neče otići gladni. Prostor i nije nešto ali tamo se ide najesti a ne pokazati.",
+      "name": "Danijel",
+      "role": "Jela s roštilja"
+    },
+    {
+      "quote": "Dnevna jela su praktična kada treba nešto toplo, domaće i jednostavno.",
+      "name": "Marko",
+      "role": "Dnevna jela"
+    },
+    {
+      "quote": "Ćevapi, pljeskavice i pileći grill pokrivaju sve što očekujem od kvartovskog grilla.",
+      "name": "Ivana",
+      "role": "Ručak"
+    },
+    {
+      "quote": "Dobro mjesto za preuzeti hranu kad nemate vremena za kuhanje.",
+      "name": "Marija",
+      "role": "Takeaway"
+    },
+    {
+      "quote": "Ponuda je jasna, porcije su konkretne, a okusi poznati i domaći.",
+      "name": "Lovro",
+      "role": "Bistro"
+    },
+    {
+      "quote": "Salate i prilozi dobro zaokruže narudžbu, posebno uz grill jela.",
+      "name": "Tina",
+      "role": "Prilozi"
+    }
+  ]
 }

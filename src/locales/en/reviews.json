@@ -1,38 +1,68 @@
 {
-	"landing": "Reviews",
-	"topper": "Guest Experiences",
-	"title": "Comments from the Everyday Offer",
-	"p": "Guests come to Dvije Žarulje for grill dishes, daily meals, quick service and takeaway options.",
-	"testimonials": [
-		{
-			"quote": "A good option for a quick lunch in Zagreb when you want grill and generous portions.",
-			"name": "Guest",
-			"role": "Grill menu"
-		},
-		{
-			"quote": "The daily dishes are practical when you want something warm, homestyle and simple.",
-			"name": "Customer",
-			"role": "Daily dishes"
-		},
-		{
-			"quote": "Ćevapi, burgers and chicken grill cover everything I expect from a neighborhood grill.",
-			"name": "Regular guest",
-			"role": "Lunch"
-		},
-		{
-			"quote": "A convenient place to pick up food when there is no time to cook.",
-			"name": "Takeaway customer",
-			"role": "Takeaway"
-		},
-		{
-			"quote": "The offer is clear, portions are satisfying, and the flavors are familiar and homestyle.",
-			"name": "Restaurant guest",
-			"role": "Bistro"
-		},
-		{
-			"quote": "The salads and sides round out an order nicely, especially with grilled dishes.",
-			"name": "Customer",
-			"role": "Sides"
-		}
-	]
+  "landing": "Reviews",
+  "topper": "Guest Experiences",
+  "title": "Comments from the Everyday Offer",
+  "p": "Guests come to Dvije Žarulje for grill dishes, daily meals, quick service and takeaway options.",
+  "testimonials": [
+    {
+      "quote": "Both the owner and the staff are very friendly, the food is excellent, the prices are affordable.... Praiseworthy... And the barbecue... The best",
+      "name": "Davor",
+      "role": "Grill dishes"
+    },
+    {
+      "quote": "The food is top-notch and you can smell the fantastic smell of a real grill. Both the food and the ambiance are to be commended!",
+      "name": "Mandica",
+      "role": "Grill offer"
+    },
+    {
+      "quote": "A good option for a quick lunch in Zagreb when you want big portions.",
+      "name": "Luka",
+      "role": "Lunch"
+    },
+    {
+      "quote": "The kebabs (Ćevapi) are always TOP, the meat is perfect, it's really meaty and it's been a long time since I've had kebabs that have a real meaty taste, you won't regret coming, there's a park right next to the restaurant so if you come with the kids they can play, they also have snacks on offer TOP 💪👌",
+      "name": "Maja",
+      "role": "Grill dishes"
+    },
+    {
+      "quote": "Today we sat down at Dvije žarulje for the first time for a quick lunch, and were delighted with both the food and the service - the kale stew was delicious, just like grandma's, and the pljeskavica was perfectly cooked, juicy and spicy. The food quality rivals much more expensive restaurants. We will definitely be back!",
+      "name": "Andrea",
+      "role": "Daily meals"
+    },
+    {
+      "quote": "Fantastic food. Everything is freshly prepared. Every day there are three menus for the buffet and there is always a grill that is recommended for everyone. The only problem is that the owner works alone so it takes a little longer to get your order, but in any case it is worth the wait. The restaurant looks unsightly from the outside, but the food is really great!",
+      "name": "Helena",
+      "role": "Fresh meals"
+    },
+    {
+      "quote": "I am very satisfied with the price and taste. In fact, pleasantly surprised at last. I definitely recommend the salary because even four people will definitely not leave hungry from there. The space is not much, but you go there to eat, not to show off.",
+      "name": "Danijel",
+      "role": "Grill dishes"
+    },
+    {
+      "quote": "The daily dishes are practical when you want something warm, homestyle and simple.",
+      "name": "Marko",
+      "role": "Daily meals"
+    },
+    {
+      "quote": "Ćevapi, burgers and chicken grill cover everything I expect from a neighborhood grill..",
+      "name": "Ivana",
+      "role": "Lunch"
+    },
+    {
+      "quote": "A convenient place to pick up food when there is no time to cook.",
+      "name": "Marija",
+      "role": "Takeaway"
+    },
+    {
+      "quote": "The offer is clear, portions are satisfying, and the flavors are familiar and homestyle..",
+      "name": "Lovro",
+      "role": "Bistro"
+    },
+    {
+      "quote": "The salads and sides round out an order nicely, especially with grilled dishes.",
+      "name": "Tina",
+      "role": "Sides"
+    }
+  ]
 }
