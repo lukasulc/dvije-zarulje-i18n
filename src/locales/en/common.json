@@ -1,59 +1,59 @@
 {
-	"home": "Home",
-	"about": "About",
-	"projects": "Menu",
-	"project-1": "Grill Menu",
-	"project-2": "Daily Menu",
-	"blog": "News",
-	"contact": "Contact",
-	"theme-label": "Choose theme",
-	"language-label": "Choose language",
-	"languageSelect": {
-		"hr": "Croatian",
-		"en": "English",
-		"instructions": "Use arrow keys to navigate, press Enter to select"
-	},
-	"themeSelect": {
-		"accessibleLabel": "Select theme",
-		"light": "Light",
-		"dark": "Dark",
-		"auto": "Auto"
-	},
-	"quote": "Order",
-	"estimate": "Contact us",
-	"ctaComponent": {
-		"title": "Hungry?",
-		"subtitle": "Visit or order",
-		"message": "Dvije Zarulje is in Sredisce, close to Bundek Lake, Bundek Park, a school, kindergarten and children's playgrounds. Visit for grill, a daily dish or takeaway.",
-		"cta": "Contact and location",
-		"alt": "Grill and homestyle food"
-	},
-	"about-page": {
-		"landing": "About",
-		"topper": "Dvije Žarulje",
-		"title": "A Zagreb grill and bistro for everyday meals",
-		"p-1": "Dvije Žarulje is located at Ulica Brune Busica 28 in Zagreb, in Sredisce and close to Bundek Lake. The offer focuses on food people look for when they want a proper lunch: grill, daily dishes, fried classics, salads and sides.",
-		"p-2": "The menu includes familiar favorites such as cevapi, gourmet burgers, chicken grill, Wiener and Zagreb-style schnitzel, and daily cooked dishes.",
-		"p-3": "The location is practical for Novi Zagreb neighbors, families after visiting Bundek, parents after school or kindergarten and anyone looking for a quick warm meal near children's playgrounds.",
-		"rank": "Restaurant | Bistro | Grill",
-		"cta": "Menu"
-	},
-	"footer": {
-		"information": "Information",
-		"services": "Menu",
-		"contact": "Contact",
-		"click": "Send email",
-		"p": "Dvije Zarulje serves grill dishes, daily specials, fried classics, salads and sides in Sredisce, near Bundek in Zagreb.",
-		"credit": "Website for "
-	},
-	"notFound": {
-		"pageNotFound": "404 - The page you're looking for does not exist.",
-		"linkText": "Back to homepage"
-	},
-	"skipLink": "Skip to main content",
-	"pagination": {
-		"previous": "Previous",
-		"next": "Next"
-	},
-	"reviews": "Reviews"
+  "home": "Home",
+  "about": "About",
+  "projects": "Menu",
+  "project-1": "Grill Menu",
+  "project-2": "Daily Menu",
+  "blog": "News",
+  "contact": "Contact",
+  "theme-label": "Choose theme",
+  "language-label": "Choose language",
+  "languageSelect": {
+    "hr": "Croatian",
+    "en": "English",
+    "instructions": "Use arrow keys to navigate, press Enter to select"
+  },
+  "themeSelect": {
+    "accessibleLabel": "Select theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Auto"
+  },
+  "quote": "Order",
+  "estimate": "Contact us",
+  "ctaComponent": {
+    "title": "Hungry?",
+    "subtitle": "Visit or order",
+    "message": "Dvije Žarulje is in Središće, close to Bundek Lake, Bundek Park, a school, kindergarten and children's playgrounds. Visit for grill, a daily dish or takeaway.",
+    "cta": "Contact and location",
+    "alt": "Grill and homestyle food"
+  },
+  "about-page": {
+    "landing": "About",
+    "topper": "Dvije Žarulje",
+    "title": "A Zagreb grill and bistro for everyday meals",
+    "p-1": "Dvije Žarulje is located at Ulica Brune Bušića 28 in Zagreb, in Središće and close to Bundek Lake. The offer focuses on food people look for when they want a proper lunch: grill, daily dishes, fried classics, salads and sides.",
+    "p-2": "The menu includes familiar favorites such as cevapi, gourmet burgers, chicken grill, Wiener and Zagreb-style schnitzel, and daily cooked dishes.",
+    "p-3": "The location is practical for Novi Zagreb neighbors, families after visiting Bundek, parents after school or kindergarten and anyone looking for a quick warm meal near children's playgrounds.",
+    "rank": "Restaurant | Bistro | Grill",
+    "cta": "Menu"
+  },
+  "footer": {
+    "information": "Information",
+    "services": "Menu",
+    "contact": "Contact",
+    "click": "Send email",
+    "p": "Dvije Žarulje serves grill dishes, daily specials, fried classics, salads and sides in Središće, near Bundek in Zagreb.",
+    "credit": "Website for "
+  },
+  "notFound": {
+    "pageNotFound": "404 - The page you're looking for does not exist.",
+    "linkText": "Back to homepage"
+  },
+  "skipLink": "Skip to main content",
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "reviews": "Reviews"
 }

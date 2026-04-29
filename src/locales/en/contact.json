@@ -1,16 +1,16 @@
 {
-	"landing": "Contact",
-	"topper": "Contact",
-	"title": "Visit Dvije Zarulje in Sredisce",
-	"p-1": "Find us at Ulica Brune Busica 28 in Zagreb, close to Bundek Lake, Bundek Park, a school, kindergarten and children's playgrounds. For the current offer, orders and questions, contact us by phone, message or social media.",
-	"form": {
-		"name": "Name",
-		"email": "Email",
-		"phone": "Phone",
-		"how": "How did you find us?",
-		"message": "Message",
-		"message-placeholder": "I'd like to ask about an order, offer or reservation...",
-		"address": "Address"
-	},
-	"cta": "Send message"
+  "landing": "Contact",
+  "topper": "Contact",
+  "title": "Visit Dvije Žarulje in Sredisce",
+  "p-1": "Find us at Ulica Brune Bušića 28 in Zagreb, close to Bundek Lake, Bundek Park, a school, kindergarten and children's playgrounds. For the current offer, orders and questions, contact us by phone, message or social media.",
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "how": "How did you find us?",
+    "message": "Message",
+    "message-placeholder": "I'd like to ask about an order, offer or reservation...",
+    "address": "Address"
+  },
+  "cta": "Send message"
 }
