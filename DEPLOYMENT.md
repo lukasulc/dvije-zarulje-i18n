@@ -1,44 +1,57 @@
 # Deployment
 
-This project should be deployed as one Cloudflare Pages project.
+This project should be deployed as one Cloudflare Worker with Static Assets.
 
-Do not deploy this repository with `wrangler deploy`. This repo no longer has a Worker entry point or Worker static-assets config. The spreadsheet rebuild flow is:
+Do not deploy this repository as a Cloudflare Pages project. The contact form
+uses Cloudflare's `send_email` binding, and that binding belongs to Workers, not
+Pages Functions.
 
-1. Cloudflare Pages builds the Astro site from GitHub.
-2. The Astro build reads the public Google Sheet CSV using `SPREADSHEET_ID` and `GOOGLE_SHEETS_GID`.
-3. `.github/workflows/scheduled-build.yml` checks the Google Sheet on a schedule.
-4. When the menu hash changes, GitHub Actions builds the site.
-5. GitHub Actions uploads `dist` directly to the existing Cloudflare Pages project with `wrangler pages deploy`.
+## How It Works
 
-## Cloudflare Pages Settings
+1. Astro builds the static site into `dist`.
+2. `worker/index.js` handles `/api/contact`.
+3. The same Worker serves all static assets from `dist` through the `ASSETS`
+   binding.
+4. The contact form sends email through Cloudflare Email Routing's `EMAIL`
+   binding.
+5. The scheduled GitHub workflow checks the menu spreadsheet and redeploys the
+   Worker when menu data changes.
 
-In the Cloudflare dashboard, keep only the Pages project for this site.
+## Cloudflare Worker Settings
 
-- Framework preset: `Astro`
+The source of truth is `wrangler.toml`.
+
+- Worker name: `dvije-zarulje`
 - Build command: `npm run build`
-- Build output directory: `dist`
-- Production branch: your main branch
-- Environment variables:
-  - `SPREADSHEET_ID`
-  - `GOOGLE_SHEETS_GID` if the sheet tab is not gid `0`
-  - `CONTACT_TO_EMAIL`
-  - `CONTACT_FROM_EMAIL`
+- Deploy command: `npx wrangler deploy`
+- Static assets directory: `dist`
+- Worker entrypoint: `worker/index.js`
 
-Do not create a Worker just to get deploy hooks. The scheduled GitHub workflow deploys to Pages directly.
+The Worker needs these environment variables:
+
+- `SPREADSHEET_ID`
+- `GOOGLE_SHEETS_GID` if the sheet tab is not gid `0`
+- `CONTACT_TO_EMAIL` - the verified inbox that receives contact messages.
+- `CONTACT_FROM_EMAIL` - the sender on your Email Routing domain, for example
+  `kontakt@dvije-zarulje.hr`.
 
 ## Contact Form Email
 
-The contact form submits to the Cloudflare Pages Function at `/api/contact`.
-Email delivery uses Cloudflare Email Sending through the `EMAIL` binding in
-`wrangler.toml`, so the Pages project needs these production environment
-variables:
+Enable Cloudflare Email Routing for the domain first. The recipient in
+`CONTACT_TO_EMAIL` must be a verified Email Routing destination. The sender in
+`CONTACT_FROM_EMAIL` must be an address on the domain where Email Routing is
+active.
 
-- `CONTACT_TO_EMAIL` - the inbox that should receive contact messages.
-- `CONTACT_FROM_EMAIL` - the sender address on your Cloudflare email domain, for example `no-reply@dvije-zarulje.hr`.
+`wrangler.toml` defines:
 
-In Cloudflare, enable Email Sending for the domain and finish any DNS records
-Cloudflare asks for. The sender address must belong to the domain you onboard
-for Cloudflare Email Sending.
+```toml
+[[send_email]]
+name = "EMAIL"
+```
+
+The binding is intentionally unrestricted in config so the recipient can be set
+with `CONTACT_TO_EMAIL` per environment. Cloudflare still only allows delivery to
+verified Email Routing destinations.
 
 ## GitHub Settings
 
@@ -49,15 +62,14 @@ Set these repository variables or secrets:
 - `CLOUDFLARE_API_TOKEN` as a secret
 - `CLOUDFLARE_ACCOUNT_ID` as a secret
 
-The API token must be able to deploy to Cloudflare Pages. The scheduled workflow runs hourly and can also be started manually from the GitHub Actions tab.
+The API token must be able to deploy Workers.
 
 ## Local Commands
 
 ```sh
 npm run build
-npm run preview
-npm run deploy-check
+npx wrangler dev
 npm run cf:deploy
 ```
 
-`npm run cf:deploy` is only for manually uploading `dist` to the existing Pages project. Normal production deploys should come from the Cloudflare Pages Git integration, or from the scheduled GitHub workflow when the spreadsheet changes.
+`npm run cf:deploy` builds Astro and deploys the Worker with static assets.

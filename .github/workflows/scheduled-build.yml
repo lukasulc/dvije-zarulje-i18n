@@ -42,12 +42,12 @@ jobs:
           GOOGLE_SHEETS_GID: ${{ secrets.GOOGLE_SHEETS_GID || vars.GOOGLE_SHEETS_GID }}
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Workers
         if: steps.menu.outputs.changed == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx wrangler pages deploy dist --project-name dvije-zarulje --branch "${{ github.ref_name }}"
+        run: npx wrangler deploy
 
       - name: Save menu hash
         uses: actions/cache/save@v4
