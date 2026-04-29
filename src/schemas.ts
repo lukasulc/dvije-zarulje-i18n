@@ -5,8 +5,11 @@ export const MenuCategorySchema = z.enum(["Starter", "Main", "Dessert", "Drink",
 export const MenuItemSchema = z.object({
 	name: z.string().trim().min(1, "Menu item name is required"),
 	price: z.coerce.number().positive("Menu item price must be a positive number"),
-	description: z.string().trim().optional(),
 	category: MenuCategorySchema,
+	description: z.string().trim().optional(),
+	badges: z.string().trim().optional(),
+	opis: z.string().trim().optional(),
+	znacke: z.string().trim().optional(),
 });
 
 export const MenuSchema = z.array(MenuItemSchema);

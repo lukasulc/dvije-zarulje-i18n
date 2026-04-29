@@ -144,7 +144,26 @@ function parseCsv(csv: string): string[][] {
 }
 
 function normalizeHeader(header: string): string {
-	return header.trim().toLowerCase().replace(/[\s_-]+/g, "");
+	return header
+		.trim()
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/[\s_-]+/g, "");
+}
+
+function findHeaderIndex(headers: string[], field: string): number | undefined {
+	const index = headers.indexOf(field);
+
+	return index === -1 ? undefined : index;
+}
+
+function readOptionalCell(row: string[], index: number | undefined): string | undefined {
+	if (index === undefined) {
+		return undefined;
+	}
+
+	return row[index] || undefined;
 }
 
 function rowsToMenuItems(rows: string[][]): unknown[] {
@@ -155,13 +174,18 @@ function rowsToMenuItems(rows: string[][]): unknown[] {
 	}
 
 	const headers = headerRow.map(normalizeHeader);
-	const fieldIndex = {
+	const requiredFieldIndex = {
 		name: headers.indexOf("name"),
 		price: headers.indexOf("price"),
-		description: headers.indexOf("description"),
 		category: headers.indexOf("category"),
 	};
-	const missingFields = Object.entries(fieldIndex)
+	const optionalFieldIndex = {
+		description: findHeaderIndex(headers, "description"),
+		badges: findHeaderIndex(headers, "badges"),
+		opis: findHeaderIndex(headers, "opis"),
+		znacke: findHeaderIndex(headers, "znacke"),
+	};
+	const missingFields = Object.entries(requiredFieldIndex)
 		.filter(([, index]) => index === -1)
 		.map(([field]) => field);
 
@@ -172,10 +196,13 @@ function rowsToMenuItems(rows: string[][]): unknown[] {
 	return dataRows
 		.filter((row) => row.some((cell) => cell.trim() !== ""))
 		.map((row) => ({
-			name: row[fieldIndex.name] ?? "",
-			price: row[fieldIndex.price] ?? "",
-			description: row[fieldIndex.description] || undefined,
-			category: row[fieldIndex.category] ?? "",
+			name: row[requiredFieldIndex.name] ?? "",
+			price: row[requiredFieldIndex.price] ?? "",
+			category: row[requiredFieldIndex.category] ?? "",
+			description: readOptionalCell(row, optionalFieldIndex.description),
+			badges: readOptionalCell(row, optionalFieldIndex.badges),
+			opis: readOptionalCell(row, optionalFieldIndex.opis),
+			znacke: readOptionalCell(row, optionalFieldIndex.znacke),
 		}));
 }
 
@@ -190,6 +217,17 @@ function slugify(value: string): string {
 
 function toNumber(value: string | number): number {
 	return typeof value === "number" ? value : Number(value);
+}
+
+function parseBadges(value: string | undefined): string[] {
+	if (!value) {
+		return [];
+	}
+
+	return value
+		.split(/[;,]/)
+		.map((badge) => badge.trim())
+		.filter(Boolean);
 }
 
 export function getFallbackMenuData(): AstroPieMenuData {
@@ -268,11 +306,14 @@ async function loadAstroPieMenuData(): Promise<AstroPieMenuData> {
 			categoryId: item.category,
 			name: { hr: item.name, en: item.name },
 			description: {
-				hr: item.description ?? "",
+				hr: item.opis ?? "",
 				en: item.description ?? "",
 			},
 			price: item.price,
-			badges: { hr: [], en: [] },
+			badges: {
+				hr: parseBadges(item.znacke),
+				en: parseBadges(item.badges),
+			},
 			available: true,
 		})),
 	};

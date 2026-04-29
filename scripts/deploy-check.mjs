@@ -6,10 +6,13 @@ import { z } from "zod";
 
 const MenuSchema = z.array(
 	z.object({
-		name: z.string().trim().min(1),
 		price: z.coerce.number().positive(),
-		description: z.string().trim().optional(),
 		category: z.enum(["Starter", "Main", "Dessert", "Drink", "Side"]),
+		name: z.string().trim().min(1),
+		description: z.string().trim().optional(),
+		badges: z.string().trim().optional(),
+		opis: z.string().trim().optional(),
+		znacke: z.string().trim().optional(),
 	}),
 );
 
@@ -118,7 +121,26 @@ function parseCsv(csv) {
 }
 
 function normalizeHeader(header) {
-	return header.trim().toLowerCase().replace(/[\s_-]+/g, "");
+	return header
+		.trim()
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/[\s_-]+/g, "");
+}
+
+function findHeaderIndex(headers, field) {
+	const index = headers.indexOf(field);
+
+	return index === -1 ? undefined : index;
+}
+
+function readOptionalCell(row, index) {
+	if (index === undefined) {
+		return undefined;
+	}
+
+	return row[index] || undefined;
 }
 
 function rowsToMenuItems(rows) {
@@ -129,13 +151,18 @@ function rowsToMenuItems(rows) {
 	}
 
 	const headers = headerRow.map(normalizeHeader);
-	const fieldIndex = {
-		name: headers.indexOf("name"),
+	const requiredFieldIndex = {
 		price: headers.indexOf("price"),
-		description: headers.indexOf("description"),
 		category: headers.indexOf("category"),
+		name: headers.indexOf("name"),
 	};
-	const missingFields = Object.entries(fieldIndex)
+	const optionalFieldIndex = {
+		description: findHeaderIndex(headers, "description"),
+		badges: findHeaderIndex(headers, "badges"),
+		opis: findHeaderIndex(headers, "opis"),
+		znacke: findHeaderIndex(headers, "znacke"),
+	};
+	const missingFields = Object.entries(requiredFieldIndex)
 		.filter(([, index]) => index === -1)
 		.map(([field]) => field);
 
@@ -146,10 +173,13 @@ function rowsToMenuItems(rows) {
 	return dataRows
 		.filter((row) => row.some((cell) => String(cell).trim() !== ""))
 		.map((row) => ({
-			name: row[fieldIndex.name] ?? "",
-			price: row[fieldIndex.price] ?? "",
-			description: row[fieldIndex.description] || undefined,
-			category: row[fieldIndex.category] ?? "",
+			price: row[requiredFieldIndex.price] ?? "",
+			category: row[requiredFieldIndex.category] ?? "",
+			name: row[requiredFieldIndex.name] ?? "",
+			description: readOptionalCell(row, optionalFieldIndex.description),
+			badges: readOptionalCell(row, optionalFieldIndex.badges),
+			opis: readOptionalCell(row, optionalFieldIndex.opis),
+			znacke: readOptionalCell(row, optionalFieldIndex.znacke),
 		}));
 }
 

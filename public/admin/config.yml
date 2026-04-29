@@ -110,7 +110,7 @@ collections:
                     name: "hr"
                     widget: "list"
                     required: false
-                    field: { label: "Badge", name: "badge", widget: "string" }
+                    field: { label: "Znacka", name: "znacka", widget: "string" }
                   - label: "English"
                     name: "en"
                     widget: "list"
