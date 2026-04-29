@@ -6,6 +6,7 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
+		"pages:build": "astro build",
 		"cf:build": "astro build",
 		"cf:deploy": "npx wrangler pages deploy dist --project-name dvije-zarulje",
 		"preview": "astro preview",

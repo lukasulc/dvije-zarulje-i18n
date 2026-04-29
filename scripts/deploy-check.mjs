@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
@@ -9,7 +9,7 @@ const MenuSchema = z.array(
 		name: z.string().trim().min(1),
 		price: z.coerce.number().positive(),
 		description: z.string().trim().optional(),
-		category: z.enum(["Starter", "Main", "Dessert", "Drink"]),
+		category: z.enum(["Starter", "Main", "Dessert", "Drink", "Side"]),
 	}),
 );
 
@@ -192,27 +192,20 @@ async function main() {
 	const menuData = await fetchMenuDataForHash();
 	const newHash = createHash("md5").update(JSON.stringify(menuData)).digest("hex");
 	const previousHash = existsSync(hashFilePath) ? readFileSync(hashFilePath, "utf8").trim() : "";
+	const changed = newHash !== previousHash;
 
-	if (newHash === previousHash) {
-		console.log("No menu changes detected. Skipping deploy hook.");
-		return;
+	if (process.env.GITHUB_OUTPUT) {
+		appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\n`);
+		appendFileSync(process.env.GITHUB_OUTPUT, `hash=${newHash}\n`);
 	}
 
-	const deployHookUrl = process.env.CLOUDFLARE_DEPLOY_HOOK_URL || process.env.CLOUDFLARE_HOOK_URL;
-
-	if (!deployHookUrl) {
-		console.log("Menu changes detected, but no Cloudflare deploy hook URL is set. Skipping hook.");
+	if (!changed) {
+		console.log("No menu changes detected. Skipping deploy.");
 		return;
-	}
-
-	const response = await fetch(deployHookUrl, { method: "POST" });
-
-	if (!response.ok) {
-		throw new Error(`Cloudflare deploy hook failed: ${response.status} ${response.statusText}`);
 	}
 
 	writeFileSync(hashFilePath, `${newHash}\n`);
-	console.log("Menu changed. Cloudflare deploy hook triggered.");
+	console.log("Menu changes detected. Build and deploy should run.");
 }
 
 main().catch((error) => {
