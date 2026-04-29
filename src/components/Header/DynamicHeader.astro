@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import { getLocalizedRoute } from "@js/translationUtils";
 import Settings from "@components/Settings/Settings.astro";
-import logoBlack from "@assets/svgs/logo-black.svg";
+import logo from "@assets/svgs/logo-black.svg";
 
 const locale = getLocaleFromUrl(Astro.url);
 ---
@@ -15,7 +15,7 @@ const locale = getLocaleFromUrl(Astro.url);
 	<div class="cs-container">
 		<!--Nav Logo-->
 		<a href={getLocalizedRoute(locale,"/")} class="cs-logo" aria-label="back to home">
-			<Image src={logoBlack} alt="logo" width={210} height={29} aria-hidden="true" decoding="async" priority/>
+			<Image src={logo} alt="logo" width={210} height={29} aria-hidden="true" decoding="async" priority/>
 		</a>
 		<!--Navigation List-->
 		<nav class="cs-nav" role="navigation">
