@@ -1,5 +1,5 @@
 ---
-import menuData from "@data/menu.json";
+import type { AstroPieMenuData } from "../../googleSheets";
 import type { Locale } from "@config/siteSettings";
 
 interface LocalizedText {
@@ -18,7 +18,7 @@ interface MenuItem {
 	categoryId: string;
 	name: LocalizedText;
 	description: LocalizedText;
-	price: string;
+	price: number;
 	badges: Record<Locale, string[]>;
 	available: boolean;
 	featured?: boolean;
@@ -27,10 +27,11 @@ interface MenuItem {
 interface Props {
 	locale: Locale;
 	categoryIds: string[];
+	menuData: AstroPieMenuData;
 	intro?: string;
 }
 
-const { locale, categoryIds, intro } = Astro.props as Props;
+const { locale, categoryIds, menuData, intro } = Astro.props as Props;
 const categories = menuData.categories as MenuCategory[];
 const items = menuData.items as MenuItem[];
 const currency = menuData.currency;
@@ -95,7 +96,7 @@ const updatedLabel = locale === "hr" ? "Ažurirano" : "Updated";
 												</div>
 											)}
 										</div>
-										<strong class="price">{priceFormatter.format(Number(item.price))}</strong>
+										<strong class="price">{priceFormatter.format(item.price)}</strong>
 									</li>
 								))}
 							</ul>
