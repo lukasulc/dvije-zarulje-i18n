@@ -1,12 +1,14 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 4H18V44H1V4Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M18 25H47V44H18V25Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M33 25V44" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M22 32V36" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M1 19H18" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M14 9V14" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M14 24V29" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M36 29H44" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M33 33H47" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M42 10L46 14V16H34V14L38 10V4H42V10Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M10 19H38" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 19L16 44" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M35 19L32 44" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18 31H30" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 13H40L38 19H10L8 13Z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M16 13C16 10.5 18 9.5 18 7C18 5.5 17 4.5 16 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24 13C24 10 27 9 27 6C27 4.5 26 3.5 25 3" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 13C32 10.5 34 9.5 34 7C34 5.5 33 4.5 32 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 25H33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M18 19V25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M24 19V25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M30 19V25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
 </svg>
