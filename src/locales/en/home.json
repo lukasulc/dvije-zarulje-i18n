@@ -1,26 +1,26 @@
 {
 	"layout": {
-		"title": "Grill and Homestyle Food in Zagreb",
-		"description": "Dvije Žarulje in Zagreb serves grill dishes, daily specials, fried classics, salads and sides for dine-in, takeaway and delivery."
+		"title": "Grill, Daily Menu and Lunch near Bundek in Zagreb",
+		"description": "Dvije Zarulje is a grill and bistro at Ulica Brune Busica 28 in Sredisce, close to Bundek Lake, Bundek Park, a school, kindergarten and children's playgrounds."
 	},
 	"hero": {
-		"topper": "Zagreb | Ulica Brune Bušića 28",
+		"topper": "Zagreb Sredisce | Ulica Brune Busica 28 | Near Bundek",
 		"title": {
 			"1": "Dvije Žarulje",
 			"2": "grill and homestyle food"
 		},
-		"p1": "A Zagreb spot for ćevapi, burgers, chicken grill, daily cooked dishes and quick lunches near a busy city route.",
+		"p1": "Grill, cevapi, burgers, chicken grill and daily cooked dishes in Sredisce, just minutes from Bundek Lake, Bundek Park, a school, kindergarten and children's playgrounds.",
 		"cta1": "View the menu",
 		"cta2": "Find us"
 	},
 	"services": [
 		{
 			"heading": "Grill Menu",
-			"p": "Ćevapi, burgers, chicken breast and mixed platters made for a proper lunch or dinner."
+			"p": "Cevapi, burgers, chicken breast and mixed platters made for a proper lunch or dinner."
 		},
 		{
 			"heading": "Daily Specials",
-			"p": "Cooked dishes such as wine goulash, stews and seasonal homestyle favorites."
+			"p": "Cooked dishes such as wine goulash, stews and seasonal homestyle favorites for a lunch break or family meal."
 		},
 		{
 			"heading": "Takeaway & Delivery",
@@ -29,9 +29,9 @@
 	],
 	"about": {
 		"topper": "About Us",
-		"title": "Straightforward, satisfying food in Zagreb",
-		"p1": "Dvije Žarulje is a Zagreb hospitality business focused on grill dishes, daily cooked meals and food that works well for a lunch break, takeaway or delivery.",
-		"p2": "The menu brings together grilled meat, fried dishes, salads and sides, including ćevapi in flatbread, gourmet burgers, Zagreb-style schnitzel and wine goulash.",
+		"title": "A grill and bistro in Sredisce near Bundek",
+		"p1": "Dvije Žarulje is located at Ulica Brune Busica 28 in Zagreb, in the Sredisce neighborhood and close to Bundek Lake and Bundek Park.",
+		"p2": "The location is practical for Novi Zagreb residents, parents after school or kindergarten, a walk by Bundek and a quick lunch after the children's playground.",
 		"p3": "Good food does not need to overcomplicate things: quality meat, familiar flavors and portions worth coming back for.",
 		"rank": "Grill, bistro and daily menu",
 		"cta": "More about us"
@@ -39,7 +39,7 @@
 	"extra": {
 		"topper": "Menu",
 		"title": "From the grill to daily cooked dishes",
-		"p1": "The grill menu includes ćevapi, šiš ćevapi, burgers, chicken breast and sharing platters, served with flatbread, onion and classic sides.",
+		"p1": "The grill menu includes cevapi, sis cevapi, burgers, chicken breast and sharing platters, served with flatbread, onion and classic sides.",
 		"p2": "For guests who want something homestyle, the daily menu brings stews, goulash, fish dishes and fried classics with sides."
 	},
 	"portfolio": {
@@ -57,7 +57,7 @@
 				"role": "Dine-in lunch"
 			},
 			{
-				"quote": "The ćevapi and burgers are satisfying, and the side options make ordering simple.",
+				"quote": "The cevapi and burgers are satisfying, and the side options make ordering simple.",
 				"name": "Regular guest",
 				"role": "Grill menu"
 			},

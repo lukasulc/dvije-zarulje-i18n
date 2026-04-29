@@ -24,7 +24,7 @@
 	"ctaComponent": {
 		"title": "Gladni ste?",
 		"subtitle": "Svratite ili naručite",
-		"message": "Pogledajte gdje se nalazimo, javite nam se ili pratite Dvije Žarulje na društvenim mrežama za aktualnu ponudu.",
+		"message": "Dvije Žarulje nalazi se u Središću, blizu jezera Bundek, parka Bundek, škole, vrtića i dječjeg igrališta. Svratite na grill, dnevno jelo ili narudžbu za van.",
 		"cta": "Kontakt i lokacija",
 		"alt": "Grill i domaća jela"
 	},
@@ -32,9 +32,9 @@
 		"landing": "O nama",
 		"topper": "Dvije Žarulje",
 		"title": "Zagrebački grill i bistro za svaki dan",
-		"p-1": "Dvije Žarulje nalazi se u Ulici Brune Bušića 28 u Zagrebu. Ponuda je usmjerena na jela koja ljudi traže za konkretan ručak: roštilj, dnevna jela, pohana jela, salate i priloge.",
+		"p-1": "Dvije Žarulje nalazi se u Ulici Brune Bušića 28 u Zagrebu, u Središću i blizu jezera Bundek. Ponuda je usmjerena na jela koja ljudi traže za konkretan ručak: roštilj, dnevna jela, pohana jela, salate i priloge.",
 		"p-2": "Na jelovniku se nalaze poznati favoriti poput ćevapa, gurmanske pljeskavice, pilećeg grilla, bečkog i zagrebačkog odreska te dnevnih kuhanih jela.",
-		"p-3": "Ideja je jednostavna: poznati okusi, poštene porcije i obrok koji možete pojesti u lokalu, ponijeti sa sobom ili naručiti.",
+		"p-3": "Lokacija je praktična za susjede iz Novog Zagreba, obitelji nakon posjeta Bundeku, roditelje nakon škole ili vrtića i sve koji žele brz, topao obrok u blizini dječjeg igrališta.",
 		"rank": "Restoran | Bistro | Grill",
 		"cta": "Jelovnik"
 	},
@@ -43,7 +43,7 @@
 		"services": "Ponuda",
 		"contact": "Kontakt",
 		"click": "Pošalji email",
-		"p": "Dvije Žarulje poslužuje grill, dnevna jela, pohane klasike, salate i priloge u Zagrebu.",
+		"p": "Dvije Žarulje poslužuje grill, dnevna jela, pohane klasike, salate i priloge u Središću, blizu Bundeka u Zagrebu.",
 		"credit": "Stranica za "
 	},
 	"notFound": {

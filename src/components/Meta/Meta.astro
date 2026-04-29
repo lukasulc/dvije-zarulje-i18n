@@ -17,7 +17,7 @@ const { title = SITE.title, description = SITE.description, heroImage } = Astro.
 
 // Data
 const localBusinessSchema = getLocalBusinessSchema(Astro.url.origin);
-const canonical = Astro.url.href;
+const canonical = new URL(Astro.url.pathname, Astro.url.origin).href;
 
 // Detect landing pages (home page for any locale: "/" or "/en/", etc.)
 const locale = getLocaleFromUrl(Astro.url);
@@ -45,6 +45,7 @@ const ogDescription = description;
 
 // Social image logic - Priority: 1) Provided heroImage, 2) Default /assets/social.jpg
 let socialImage: string;
+let socialImageType = "image/jpeg";
 
 if (heroImage) {
 	const optimizedImage = await getImage({
@@ -54,6 +55,7 @@ if (heroImage) {
 		format: "webp",
 	});
 	socialImage = Astro.url.origin + optimizedImage.src;
+	socialImageType = "image/webp";
 } else {
 	// Default social image (static file in public/)
 	socialImage = Astro.url.origin + OG.image;
@@ -63,6 +65,7 @@ if (heroImage) {
 <!-- Standard Meta Tags -->
 <meta charset="utf-8" />
 <meta name="description" content={description} />
+<meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="web_author" content={SITE.author} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -95,7 +98,7 @@ if (heroImage) {
 <meta property="og:image" content={socialImage} />
 <meta content="1200" property="og:image:width" />
 <meta content="600" property="og:image:height" />
-<meta content="image/jpeg" property="og:image:type" />
+<meta content={socialImageType} property="og:image:type" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />

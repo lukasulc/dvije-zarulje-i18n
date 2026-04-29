@@ -1,15 +1,15 @@
 {
 	"layout": {
-		"title": "Grill i domaća jela u Zagrebu",
-		"description": "Dvije Žarulje u Zagrebu poslužuje grill, dnevna jela, pohana jela, salate i priloge za jelo u lokalu, preuzimanje i dostavu."
+		"title": "Grill, dnevna jela i ručak blizu Bundeka u Zagrebu",
+		"description": "Dvije Žarulje je grill i bistro u Ulici Brune Bušića 28 u Središću, blizu jezera Bundek, parka Bundek, škole, vrtića i dječjeg igrališta."
 	},
 	"hero": {
-		"topper": "Zagreb | Ulica Brune Bušića 28",
+		"topper": "Zagreb Središće | Ulica Brune Bušića 28 | Blizu Bundeka",
 		"title": {
 			"1": "Dvije Žarulje",
 			"2": "grill i domaća jela"
 		},
-		"p1": "Mjesto za ćevape, pljeskavice, pileći grill, dnevna kuhana jela i brzi ručak u kvartu, odmah uz važnu zagrebačku prometnu rutu.",
+		"p1": "Grill, ćevapi, pljeskavice, pileći grill i dnevna kuhana jela u Središću, nekoliko minuta od jezera Bundek, parka, škole, vrtića i dječjeg igrališta.",
 		"cta1": "Pogledaj jelovnik",
 		"cta2": "Kako do nas"
 	},
@@ -20,7 +20,7 @@
 		},
 		{
 			"heading": "Dnevna jela",
-			"p": "Kuhana jela poput vinskog gulaša, variva i sezonskih dnevnih favorita."
+			"p": "Kuhana jela poput vinskog gulaša, variva i sezonskih dnevnih favorita za pauzu ili obiteljski ručak."
 		},
 		{
 			"heading": "Za van i dostava",
@@ -29,9 +29,9 @@
 	],
 	"about": {
 		"topper": "O nama",
-		"title": "Jednostavna, konkretna hrana u Zagrebu",
-		"p1": "Dvije Žarulje je zagrebački ugostiteljski obrt specijaliziran za grill, domaća dnevna jela i obroke koji dobro funkcioniraju za pauzu, ručak ili narudžbu za van.",
-		"p2": "Ponuda spaja roštilj, pohana jela, salate i priloge, s jelima poput ćevapa u lepinji, gurmanske pljeskavice, zagrebačkog odreska i vinskog gulaša.",
+		"title": "Grill i bistro u Središću, blizu Bundeka",
+		"p1": "Dvije Žarulje nalazi se u Ulici Brune Bušića 28 u Zagrebu, u kvartu Središće i u neposrednoj blizini jezera Bundek i parka Bundek.",
+		"p2": "Lokacija je praktična za stanare Novog Zagreba, roditelje nakon škole ili vrtića, šetnju uz Bundek i brzi ručak nakon dječjeg igrališta.",
 		"p3": "Dobra hrana ne mora komplicirati: kvalitetno meso, poznati okusi i porcije za koje se vrijedi vratiti.",
 		"rank": "Grill, bistro i dnevna ponuda",
 		"cta": "Saznaj više"

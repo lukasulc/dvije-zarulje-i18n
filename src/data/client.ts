@@ -1,7 +1,7 @@
 export const SITE = {
 	title: "Dvije Žarulje",
 	tagline: "Grill i domaća jela u Zagrebu",
-	description: "Dvije Žarulje je zagrebački restoran s grill ponudom, dnevnim jelima, pohanim jelima, salatama i opcijama za jelo u lokalu, preuzimanje i dostavu.",
+	description: "Dvije Žarulje je zagrebački grill restoran i bistro u Središću, blizu jezera Bundek i parka Bundek, s grill ponudom, dnevnim jelima, pohanim jelima, salatama, jelom u lokalu, preuzimanjem i dostavom.",
 	url: "https://www.dvije-zarulje.hr",
 	author: "Dvije Žarulje",
 	locale: "hr-HR",
@@ -12,7 +12,7 @@ export const BUSINESS = {
 	email: "contact@lukasulc.com",
 	phoneForTel: "+385951999754",
 	phoneFormatted: "+385 95 199 9754",
-	logo: "/favicon.svg", // update to the URL of your logo image
+	logo: "/favicon.svg",
 	address: {
 		lineOne: "Ulica Brune Bušića 28",
 		lineTwo: "",
