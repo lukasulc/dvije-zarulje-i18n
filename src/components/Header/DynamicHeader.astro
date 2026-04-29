@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import { getLocalizedRoute } from "@js/translationUtils";
 import Settings from "@components/Settings/Settings.astro";
-import logo from "@assets/svgs/logo-black.svg";
+import logo from "@assets/svgs/logo-white.svg";
 
 const locale = getLocaleFromUrl(Astro.url);
 ---
@@ -945,5 +945,42 @@ const locale = getLocaleFromUrl(Astro.url);
 				}
 			}
 		}
+	}
+
+	/* Always black header */
+	#cs-navigation {
+		background-color: #000 !important;
+	}
+
+	#cs-navigation .cs-line {
+		background-color: #fff !important;
+	}
+
+	#cs-navigation .cs-li-link,
+	#cs-navigation .cs-social-link {
+		color: #fff !important;
+	}
+
+	#cs-navigation .cs-social-link {
+		border-color: rgba(255, 255, 255, 0.35) !important;
+	}
+
+	#cs-navigation .cs-ul::after {
+		border-inline-end-color: rgba(255, 255, 255, 0.35) !important;
+	}
+
+	#cs-navigation .cs-ul-wrapper,
+	#cs-navigation .cs-drop-ul {
+		background-color: #000 !important;
+	}
+
+	#cs-navigation .cs-drop-li,
+	#cs-navigation .cs-drop-link {
+		color: #fff !important;
+	}
+
+	#cs-navigation .cs-drop-link:hover,
+	#cs-navigation .cs-drop-link:focus-visible {
+		background-color: #1a1a1a !important;
 	}
 </style>
