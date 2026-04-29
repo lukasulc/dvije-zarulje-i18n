@@ -4,15 +4,14 @@ import { getLocaleFromUrl } from "@js/localeUtils";
 import { useTranslations } from "@js/translationUtils";
 import starsSvg from "@assets/svgs/stars.svg";
 import profileSvg from "@assets/svgs/profile.svg";
+import enReviews from "@locales/en/reviews.json";
+import hrReviews from "@locales/hr/reviews.json";
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 
-const testimonials = t("home:testimonials.items") as Array<{
-	quote: string;
-	name: string;
-	role: string;
-}>;
+const reviewsData = locale === "hr" ? hrReviews : enReviews;
+const testimonials = reviewsData.testimonials.slice(0, 3);
 ---
 
 <!-- ============================================ -->
@@ -184,13 +183,15 @@ const testimonials = t("home:testimonials.items") as Array<{
 		body.dark-mode {
 			#testimonials {
 				.cs-item {
-					background-color: var(--medium);
+					background-color: var(--darkCard);
+					border: 1px solid var(--darkCardBorder);
+					box-shadow: var(--darkCardShadow);
 				}
 
 				.cs-review,
 				.cs-job {
 					color: var(--bodyTextColorWhite);
-					opacity: 0.8;
+					opacity: 0.88;
 				}
 
 				.cs-name {

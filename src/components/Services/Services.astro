@@ -133,7 +133,9 @@ const t = useTranslations(locale);
 	@media only screen and (min-width: 0em) {
 		body.dark-mode {
 			#services {
-				background: var(--medium);
+				background: var(--darkCard);
+				border-color: var(--primaryDark);
+				box-shadow: var(--darkPanelShadow);
 
 				picture {
 					background: var(--primaryDark);
@@ -142,6 +144,11 @@ const t = useTranslations(locale);
 				h2 {
 					font-weight: bold;
 					color: #fff;
+				}
+
+				p {
+					color: var(--bodyTextColorWhite);
+					opacity: 0.86;
 				}
 			}
 		}
