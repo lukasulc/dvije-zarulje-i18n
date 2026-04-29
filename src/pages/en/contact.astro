@@ -5,9 +5,9 @@ import Banner from "@components/Banner/Banner.astro";
 import { Picture } from "astro:assets";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import { useTranslations } from "@js/translationUtils";
-import skyscraper from "@assets/images/skyscraper.jpg";
+import plata from "@assets/images/food/plata.jpg";
 
-import landingImage from "@assets/images/landing.jpg";
+import landingImage from "@assets/images/food/meat.jpg";
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -113,7 +113,7 @@ const t = useTranslations(locale);
         </a>
 
         <!-- Background Image-->
-        <Picture src={skyscraper} alt="building" width={2500} formats={["avif", "webp"]} pictureAttributes={{ class: "cs-bg-picture" }} aria-hidden="true" decoding="async" priority />
+        <Picture src={plata} alt="mixed grill platter" width={2500} formats={["avif", "webp"]} pictureAttributes={{ class: "cs-bg-picture" }} aria-hidden="true" decoding="async" priority />
       </div>
     </div>
   </section>

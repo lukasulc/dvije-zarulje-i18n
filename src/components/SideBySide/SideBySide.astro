@@ -2,8 +2,8 @@
 import { Picture } from "astro:assets";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import { useTranslations, getLocalizedRoute } from "@js/translationUtils";
-import cabinets2 from "@assets/images/CTA/cabinets2.jpg";
-import construction from "@assets/images/construction.jpg";
+import mincedMeatSteak from "@assets/images/food/minced-meet-steak.jpg";
+import friedPaprika from "@assets/images/food/fried-paprika.jpg";
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -17,8 +17,8 @@ const t = useTranslations(locale);
 	<div class="cs-container">
 		<!-- Left Image Section -->
 		<div class="cs-left">
-			<Picture src={cabinets2} alt="cabinets" width={400} formats={["avif", "webp"]} pictureAttributes={{ class: "cs-picture cs-picture1" }} aria-hidden="true" decoding="async" loading="lazy" />
-			<Picture src={construction} alt="house" width={400} formats={["avif", "webp"]} pictureAttributes={{ class: "cs-picture cs-picture2" }} aria-hidden="true" decoding="async" loading="lazy" />
+			<Picture src={mincedMeatSteak} alt="grilled minced meat steak" width={400} formats={["avif", "webp"]} pictureAttributes={{ class: "cs-picture cs-picture1" }} aria-hidden="true" decoding="async" loading="lazy" />
+			<Picture src={friedPaprika} alt="fried paprika" width={400} formats={["avif", "webp"]} pictureAttributes={{ class: "cs-picture cs-picture2" }} aria-hidden="true" decoding="async" loading="lazy" />
 		</div>
 		<!-- Right Content Section-->
 		<div class="cs-right">
