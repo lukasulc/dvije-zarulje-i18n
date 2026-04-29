@@ -1,1 +1,5 @@
-/* /index.html  200
+# 1. Do nothing for the 404 page itself (prevents the loop)
+/:lang/404/  /:lang/404/  200
+
+# 2. Catch everything else for that language
+/:lang/* /:lang/404/  200
