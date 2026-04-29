@@ -6,10 +6,6 @@ main = "worker/index.js"
 pattern = "dvije-zarulje.lukasulc.com"
 custom_domain = true
 
-[[routes]]
-pattern = "dvije-zarulje.hr"
-custom_domain = true
-
 [assets]
 directory = "dist"
 binding = "ASSETS"
