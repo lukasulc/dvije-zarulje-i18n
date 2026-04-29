@@ -3,7 +3,7 @@ import { SITE, BUSINESS, OG } from "@data/client";
 /**
  * Generates a BlogPosting JSON-LD schema object for a blog post.
  * @param {object} post - The Astro content collection entry
- * @param {string} locale - The locale string (e.g. "en", "fr")
+ * @param {string} locale - The locale string (e.g. "hr", "en")
  * @param {string} postUrl - The full URL of the post
  */
 export function getBlogPostingSchema(post, locale, postUrl) {

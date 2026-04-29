@@ -1,0 +1,38 @@
+{
+	"landing": "Recenzije",
+	"topper": "Iskustva gostiju",
+	"title": "Komentari iz svakodnevne ponude",
+	"p": "Gosti Dvije Žarulje najčešće traže grill, dnevna jela, brzu uslugu i opcije za narudžbu za van.",
+	"testimonials": [
+		{
+			"quote": "Dobra opcija za brz ručak u Zagrebu kada želite roštilj i konkretne porcije.",
+			"name": "Gost",
+			"role": "Grill ponuda"
+		},
+		{
+			"quote": "Dnevna jela su praktična kada treba nešto toplo, domaće i jednostavno.",
+			"name": "Kupac",
+			"role": "Dnevna jela"
+		},
+		{
+			"quote": "Ćevapi, pljeskavice i pileći grill pokrivaju sve što očekujem od kvartovskog grilla.",
+			"name": "Stalni gost",
+			"role": "Ručak"
+		},
+		{
+			"quote": "Dobro mjesto za preuzeti hranu kad nemate vremena za kuhanje.",
+			"name": "Kupac za van",
+			"role": "Takeaway"
+		},
+		{
+			"quote": "Ponuda je jasna, porcije su konkretne, a okusi poznati i domaći.",
+			"name": "Gost restorana",
+			"role": "Bistro"
+		},
+		{
+			"quote": "Salate i prilozi dobro zaokruže narudžbu, posebno uz grill jela.",
+			"name": "Kupac",
+			"role": "Prilozi"
+		}
+	]
+}

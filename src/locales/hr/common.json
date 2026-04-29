@@ -1,0 +1,59 @@
+{
+	"home": "Početna",
+	"about": "O nama",
+	"projects": "Jelovnik",
+	"project-1": "Grill ponuda",
+	"project-2": "Dnevna ponuda",
+	"blog": "Novosti",
+	"contact": "Kontakt",
+	"theme-label": "Odaberite temu",
+	"language-label": "Odaberite jezik",
+	"languageSelect": {
+		"hr": "Hrvatski",
+		"en": "Engleski",
+		"instructions": "Koristite strelice za navigaciju i Enter za odabir"
+	},
+	"themeSelect": {
+		"accessibleLabel": "Odaberite temu",
+		"light": "Svijetla",
+		"dark": "Tamna",
+		"auto": "Automatski"
+	},
+	"quote": "Naruči",
+	"estimate": "Kontaktirajte nas",
+	"ctaComponent": {
+		"title": "Gladni ste?",
+		"subtitle": "Svratite ili naručite",
+		"message": "Pogledajte gdje se nalazimo, javite nam se ili pratite Dvije Žarulje na društvenim mrežama za aktualnu ponudu.",
+		"cta": "Kontakt i lokacija",
+		"alt": "Grill i domaća jela"
+	},
+	"about-page": {
+		"landing": "O nama",
+		"topper": "Dvije Žarulje",
+		"title": "Zagrebački grill i bistro za svaki dan",
+		"p-1": "Dvije Žarulje nalazi se u Ulici Brune Bušića 28 u Zagrebu. Ponuda je usmjerena na jela koja ljudi traže za konkretan ručak: roštilj, dnevna jela, pohana jela, salate i priloge.",
+		"p-2": "Na jelovniku se nalaze poznati favoriti poput ćevapa, gurmanske pljeskavice, pilećeg grilla, bečkog i zagrebačkog odreska te dnevnih kuhanih jela.",
+		"p-3": "Ideja je jednostavna: poznati okusi, poštene porcije i obrok koji možete pojesti u lokalu, ponijeti sa sobom ili naručiti.",
+		"rank": "Restoran | Bistro | Grill",
+		"cta": "Jelovnik"
+	},
+	"footer": {
+		"information": "Informacije",
+		"services": "Ponuda",
+		"contact": "Kontakt",
+		"click": "Pošalji email",
+		"p": "Dvije Žarulje poslužuje grill, dnevna jela, pohane klasike, salate i priloge u Zagrebu.",
+		"credit": "Stranica za "
+	},
+	"notFound": {
+		"pageNotFound": "404 - Stranica koju tražite ne postoji.",
+		"linkText": "Povratak na početnu"
+	},
+	"skipLink": "Preskoči na glavni sadržaj",
+	"pagination": {
+		"previous": "Prethodno",
+		"next": "Sljedeće"
+	},
+	"reviews": "Recenzije"
+}

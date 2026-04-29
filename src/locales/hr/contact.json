@@ -1,0 +1,16 @@
+{
+	"landing": "Kontakt",
+	"topper": "Kontakt",
+	"title": "Posjetite Dvije Žarulje",
+	"p-1": "Nalazimo se u Ulici Brune Bušića 28 u Zagrebu. Za aktualnu ponudu, narudžbe i upite javite se telefonom, porukom ili putem društvenih mreža.",
+	"form": {
+		"name": "Ime",
+		"email": "Email",
+		"phone": "Telefon",
+		"how": "Kako ste čuli za nas?",
+		"message": "Poruka",
+		"message-placeholder": "Zanima me narudžba, ponuda ili rezervacija...",
+		"address": "Adresa"
+	},
+	"cta": "Pošalji poruku"
+}

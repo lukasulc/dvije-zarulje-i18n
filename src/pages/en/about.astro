@@ -15,7 +15,7 @@ const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 
-<BaseLayout title={t("about-page.landing")} description="Meta description for the page">
+<BaseLayout title={t("about-page.landing")} description={t("about-page.p-1")}>
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
@@ -47,7 +47,7 @@ const t = useTranslations(locale);
           <p class="cs-flex-p">
             {t("about-page.p-3")}
           </p>
-          <span class="cs-name">Justin Time</span>
+          <span class="cs-name">Dvije Žarulje</span>
           <span class="cs-job">{t("about-page.rank")}</span>
           <Icon name="quote-white" class="cs-quote-icon" />
         </div>

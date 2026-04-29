@@ -1,0 +1,71 @@
+{
+	"layout": {
+		"title": "Grill i domaća jela u Zagrebu",
+		"description": "Dvije Žarulje u Zagrebu poslužuje grill, dnevna jela, pohana jela, salate i priloge za jelo u lokalu, preuzimanje i dostavu."
+	},
+	"hero": {
+		"topper": "Zagreb | Ulica Brune Bušića 28",
+		"title": {
+			"1": "Dvije Žarulje",
+			"2": "grill i domaća jela"
+		},
+		"p1": "Mjesto za ćevape, pljeskavice, pileći grill, dnevna kuhana jela i brzi ručak u kvartu, odmah uz važnu zagrebačku prometnu rutu.",
+		"cta1": "Pogledaj jelovnik",
+		"cta2": "Kako do nas"
+	},
+	"services": [
+		{
+			"heading": "Grill ponuda",
+			"p": "Ćevapi, pljeskavice, pileća prsa i plate pripremljene za konkretan ručak ili večeru."
+		},
+		{
+			"heading": "Dnevna jela",
+			"p": "Kuhana jela poput vinskog gulaša, variva i sezonskih dnevnih favorita."
+		},
+		{
+			"heading": "Za van i dostava",
+			"p": "Naručite za preuzimanje ili dostavu putem dostupnih platformi kao što su Wolt i Glovo."
+		}
+	],
+	"about": {
+		"topper": "O nama",
+		"title": "Jednostavna, konkretna hrana u Zagrebu",
+		"p1": "Dvije Žarulje je zagrebački ugostiteljski obrt specijaliziran za grill, domaća dnevna jela i obroke koji dobro funkcioniraju za pauzu, ručak ili narudžbu za van.",
+		"p2": "Ponuda spaja roštilj, pohana jela, salate i priloge, s jelima poput ćevapa u lepinji, gurmanske pljeskavice, zagrebačkog odreska i vinskog gulaša.",
+		"p3": "Dobra hrana ne mora komplicirati: kvalitetno meso, poznati okusi i porcije za koje se vrijedi vratiti.",
+		"rank": "Grill, bistro i dnevna ponuda",
+		"cta": "Saznaj više"
+	},
+	"extra": {
+		"topper": "Jelovnik",
+		"title": "Od roštilja do dnevnih kuhanih jela",
+		"p1": "Grill ponuda uključuje ćevape, šiš ćevape, pljeskavice, pileća prsa i plate za više osoba, uz lepinju, luk i klasične dodatke.",
+		"p2": "Za one koji žele nešto domaće, dnevna ponuda donosi variva, gulaš, riblja jela i pohane klasike s prilogom."
+	},
+	"portfolio": {
+		"topper": "Ponuda",
+		"title": "Poznati okusi, brza usluga i konkretne porcije",
+		"cta": "Pogledaj jelovnik"
+	},
+	"testimonials": {
+		"topper": "Recenzije",
+		"title": "Što gosti najčešće hvale",
+		"items": [
+			{
+				"quote": "Odlično mjesto za brz i zasitan ručak, posebno ako želite grill bez puno čekanja.",
+				"name": "Gost restorana",
+				"role": "Ručak u lokalu"
+			},
+			{
+				"quote": "Ćevapi i pljeskavice su konkretni, a izbor priloga dovoljan za jednostavnu narudžbu.",
+				"name": "Stalni gost",
+				"role": "Grill ponuda"
+			},
+			{
+				"quote": "Dnevna jela su praktična opcija kad želite nešto domaće i toplo tijekom radnog dana.",
+				"name": "Kupac",
+				"role": "Dnevna ponuda"
+			}
+		]
+	}
+}

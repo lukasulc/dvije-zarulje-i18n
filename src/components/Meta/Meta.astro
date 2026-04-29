@@ -19,12 +19,14 @@ const { title = SITE.title, description = SITE.description, heroImage } = Astro.
 const localBusinessSchema = getLocalBusinessSchema(Astro.url.origin);
 const canonical = Astro.url.href;
 
-// Detect landing pages (home page for any locale: "/" or "/fr/", etc.)
+// Detect landing pages (home page for any locale: "/" or "/en/", etc.)
 const locale = getLocaleFromUrl(Astro.url);
 const isLandingPage = Astro.url.pathname === "/" || Astro.url.pathname === `/${locale}/`;
 
 // Format page title with business name (and location if home page)
-const pageTitle = isLandingPage ? `${title} | ${BUSINESS.name} | ${BUSINESS.address.city}, ${BUSINESS.address.state}` : `${title} | ${BUSINESS.name}`;
+const locationParts = [BUSINESS.address.city, BUSINESS.address.state].filter(Boolean).join(", ");
+const pageTitle = isLandingPage ? `${title} | ${BUSINESS.name} | ${locationParts}` : `${title} | ${BUSINESS.name}`;
+const ogLocale = localeMap[locale].replace("-", "_");
 
 // Generate hreflang alternate links
 const hrefLangLinks = await Promise.all(
@@ -84,7 +86,7 @@ if (heroImage) {
 <link rel="alternate" hreflang="x-default" href={hrefLangLinks[0]?.href} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:locale" content={OG.locale} />
+<meta property="og:locale" content={ogLocale || OG.locale} />
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content={ogType} />
 <meta property="og:title" content={ogTitle} />

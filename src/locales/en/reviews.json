@@ -1,38 +1,38 @@
 {
 	"landing": "Reviews",
-	"topper": "Our Reviews",
-	"title": "Words From Our Customers",
-	"p": "Read what our satisfied customers have to say about our services. We take pride in delivering quality work and exceptional customer service.",
+	"topper": "Guest Experiences",
+	"title": "Comments from the Everyday Offer",
+	"p": "Guests come to Dvije Žarulje for grill dishes, daily meals, quick service and takeaway options.",
 	"testimonials": [
 		{
-			"quote": "I was amazed by the quality of work done. The team was professional, timely, and exceeded my expectations. I highly recommend their services to anyone looking for top-notch quality.",
-			"name": "John Smith",
-			"role": "Homeowner"
+			"quote": "A good option for a quick lunch in Zagreb when you want grill and generous portions.",
+			"name": "Guest",
+			"role": "Grill menu"
 		},
 		{
-			"quote": "Outstanding service from start to finish. They communicated clearly throughout the entire process and delivered exactly what was promised. Will definitely use them again.",
-			"name": "Sarah Johnson",
-			"role": "Business Owner"
+			"quote": "The daily dishes are practical when you want something warm, homestyle and simple.",
+			"name": "Customer",
+			"role": "Daily dishes"
 		},
 		{
-			"quote": "The level of craftsmanship and attention to detail was impressive. They treated my home like it was their own. I couldn't be happier with the results.",
-			"name": "Michael Brown",
-			"role": "Property Manager"
+			"quote": "Ćevapi, burgers and chicken grill cover everything I expect from a neighborhood grill.",
+			"name": "Regular guest",
+			"role": "Lunch"
 		},
 		{
-			"quote": "Incredibly professional team. They arrived on time, worked efficiently, and cleaned up after themselves. The final result was better than I imagined.",
-			"name": "Emily Davis",
-			"role": "Homeowner"
+			"quote": "A convenient place to pick up food when there is no time to cook.",
+			"name": "Takeaway customer",
+			"role": "Takeaway"
 		},
 		{
-			"quote": "I've used many contractors over the years, but this team stands out. Their expertise and commitment to quality are unmatched. Highly recommended!",
-			"name": "Robert Wilson",
-			"role": "Real Estate Investor"
+			"quote": "The offer is clear, portions are satisfying, and the flavors are familiar and homestyle.",
+			"name": "Restaurant guest",
+			"role": "Bistro"
 		},
 		{
-			"quote": "From the initial consultation to project completion, the experience was seamless. They listened to my needs and delivered a perfect result.",
-			"name": "Jennifer Martinez",
-			"role": "Interior Designer"
+			"quote": "The salads and sides round out an order nicely, especially with grilled dishes.",
+			"name": "Customer",
+			"role": "Sides"
 		}
 	]
 }

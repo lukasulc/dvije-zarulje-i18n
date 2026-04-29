@@ -5,23 +5,27 @@ export function getLocalBusinessSchema(origin) {
 	if (BUSINESS.socials?.facebook) sameAs.push(BUSINESS.socials.facebook);
 	if (BUSINESS.socials?.instagram) sameAs.push(BUSINESS.socials.instagram);
 
-	return {
+	const schema = {
 		"@context": "https://schema.org",
-		"@type": ["LocalBusiness", "WebSite"],
+		"@type": ["Restaurant", "LocalBusiness", "WebSite"],
 		name: BUSINESS.name,
 		url: SITE.url,
 		logo: origin + BUSINESS.logo,
 		image: origin + BUSINESS.logo,
-		email: BUSINESS.email,
 		telephone: BUSINESS.phoneForTel,
 		address: {
 			"@type": "PostalAddress",
-			streetAddress: `${BUSINESS.address.lineOne}, ${BUSINESS.address.lineTwo}`,
+			streetAddress: [BUSINESS.address.lineOne, BUSINESS.address.lineTwo].filter(Boolean).join(", "),
 			addressLocality: BUSINESS.address.city,
 			addressRegion: BUSINESS.address.state,
 			postalCode: BUSINESS.address.zip,
+			addressCountry: "HR",
 		},
+		servesCuisine: ["Croatian", "Grill", "Bistro"],
+		priceRange: "€€",
 		sameAs: sameAs,
 		inLanguage: SITE.locale,
 	};
+	if (BUSINESS.email) schema.email = BUSINESS.email;
+	return schema;
 }

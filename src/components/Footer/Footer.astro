@@ -31,7 +31,7 @@ const currentYear = getCurrentYear();
           </li>
           <!-- Note: `:any` is solely used to stop the TypeScript warnings. It's an upstream issue with the i18n package which does not impact the code. -->
           {
-            navData.map((entry: any) => (
+            navData.filter((entry: any) => entry.url).map((entry: any) => (
               <li>
                 {entry.url && (<a href={getLocalizedRoute(locale,entry.url)}>{entry.label[locale]}</a>)}
               </li>
@@ -42,10 +42,10 @@ const currentYear = getCurrentYear();
           <li>
             <h2>{t("footer.services")}</h2>
           </li>
-          <li>Service1</li>
-          <li>Service2</li>
-          <li>Service4</li>
-          <li>Service5</li>
+          <li>{t("project-1")}</li>
+          <li>{t("project-2")}</li>
+          <li>{locale === "hr" ? "Pohana jela" : "Fried dishes"}</li>
+          <li>{locale === "hr" ? "Salate i prilozi" : "Salads and sides"}</li>
         </ul>
         <ul>
           <li>
@@ -54,9 +54,9 @@ const currentYear = getCurrentYear();
           <li>
             <a href={getLocalizedRoute(locale,"/contact")}>
               {BUSINESS.address.lineOne}<br />
-              {BUSINESS.address.lineTwo}<br />
+              {BUSINESS.address.lineTwo && <>{BUSINESS.address.lineTwo}<br /></>}
               {BUSINESS.address.city}
-              {BUSINESS.address.state}
+              {BUSINESS.address.state && ` ${BUSINESS.address.state}`}
               {BUSINESS.address.zip}
             </a>
           </li>
@@ -66,9 +66,11 @@ const currentYear = getCurrentYear();
               {BUSINESS.phoneFormatted}
             </a>
           </li>
-          <li>
-            <a href={`mailto:${BUSINESS.email}`}>{t("footer.click")}</a>
-          </li>
+          {BUSINESS.email && (
+            <li>
+              <a href={`mailto:${BUSINESS.email}`}>{t("footer.click")}</a>
+            </li>
+          )}
         </ul>
       </div>
     </section>
@@ -76,7 +78,7 @@ const currentYear = getCurrentYear();
 
   <section class="credit">
     <span>{t("footer.credit")}</span>
-    <a href={getLocalizedRoute(locale,"/")} target="_blank" rel="noopener">Your Company Name</a>
+    <a href={getLocalizedRoute(locale,"/")} target="_blank" rel="noopener">{BUSINESS.name}</a>
     <span class="copyright"> Copyright {currentYear}</span>
   </section>
 </footer>

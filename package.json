@@ -6,6 +6,8 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
+		"cf:build": "astro build",
+		"cf:deploy": "npx wrangler pages deploy dist --project-name dvije-zarulje",
 		"preview": "astro preview",
 		"astro": "astro",
 		"remove-demo": "node scripts/remove-demo.js",

@@ -1,70 +1,70 @@
 {
 	"layout": {
-		"title": "Pixel Perfect Websites",
-		"description": "Meta description for the page"
+		"title": "Grill and Homestyle Food in Zagreb",
+		"description": "Dvije Žarulje in Zagreb serves grill dishes, daily specials, fried classics, salads and sides for dine-in, takeaway and delivery."
 	},
 	"hero": {
-		"topper": "Advanced Kit",
+		"topper": "Zagreb | Ulica Brune Bušića 28",
 		"title": {
-			"1": "Advanced Astro v6",
-			"2": "i18n"
+			"1": "Dvije Žarulje",
+			"2": "grill and homestyle food"
 		},
-		"p1": "This kit is specially designed for customers who want a multi-language site, and is therefore configured with Astro's internationalization tools (i18n) for two languages: English and French. It also includes a Decap CMS integration.",
-		"cta1": "GitHub",
-		"cta2": "CodeStitch"
+		"p1": "A Zagreb spot for ćevapi, burgers, chicken grill, daily cooked dishes and quick lunches near a busy city route.",
+		"cta1": "View the menu",
+		"cta2": "Find us"
 	},
 	"services": [
 		{
-			"heading": "Service 1",
-			"p": "Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences."
+			"heading": "Grill Menu",
+			"p": "Ćevapi, burgers, chicken breast and mixed platters made for a proper lunch or dinner."
 		},
 		{
-			"heading": "Service 2",
-			"p": "Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences."
+			"heading": "Daily Specials",
+			"p": "Cooked dishes such as wine goulash, stews and seasonal homestyle favorites."
 		},
 		{
-			"heading": "Service 3",
-			"p": "Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences."
+			"heading": "Takeaway & Delivery",
+			"p": "Order for pickup or delivery through available platforms such as Wolt and Glovo."
 		}
 	],
 	"about": {
 		"topper": "About Us",
-		"title": "About Company Title",
-		"p1": "Our company was created In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.",
-		"p2": "We believe that In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.",
-		"p3": "It's important In consequat tincidunt turpis sit amet imperdiet.",
-		"rank": "CEO-Founder",
+		"title": "Straightforward, satisfying food in Zagreb",
+		"p1": "Dvije Žarulje is a Zagreb hospitality business focused on grill dishes, daily cooked meals and food that works well for a lunch break, takeaway or delivery.",
+		"p2": "The menu brings together grilled meat, fried dishes, salads and sides, including ćevapi in flatbread, gourmet burgers, Zagreb-style schnitzel and wine goulash.",
+		"p3": "Good food does not need to overcomplicate things: quality meat, familiar flavors and portions worth coming back for.",
+		"rank": "Grill, bistro and daily menu",
 		"cta": "More about us"
 	},
 	"extra": {
-		"topper": "SEO Ranking",
-		"title": "Talk about a main service keyword",
-		"p1": "Our main service In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.",
-		"p2": "Research shows that In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per."
+		"topper": "Menu",
+		"title": "From the grill to daily cooked dishes",
+		"p1": "The grill menu includes ćevapi, šiš ćevapi, burgers, chicken breast and sharing platters, served with flatbread, onion and classic sides.",
+		"p2": "For guests who want something homestyle, the daily menu brings stews, goulash, fish dishes and fried classics with sides."
 	},
 	"portfolio": {
-		"topper": "Our Portfolio",
-		"title": "Et orci volutpat, back up generator installations",
-		"cta": "View Our Products"
+		"topper": "Menu Highlights",
+		"title": "Familiar flavors, quick service and generous portions",
+		"cta": "View the menu"
 	},
 	"testimonials": {
-		"topper": "Testimonials",
-		"title": "Words From Our Customers",
+		"topper": "Reviews",
+		"title": "What Guests Often Mention",
 		"items": [
 			{
-				"quote": "I was amazed by the quality of work. The team was professional and exceeded my expectations. Highly recommend!",
-				"name": "John Smith",
-				"role": "Homeowner"
+				"quote": "A good place for a quick, filling lunch, especially when you want grill without a long wait.",
+				"name": "Restaurant guest",
+				"role": "Dine-in lunch"
 			},
 			{
-				"quote": "Outstanding service from start to finish. They communicated clearly and delivered exactly what was promised.",
-				"name": "Sarah Johnson",
-				"role": "Business Owner"
+				"quote": "The ćevapi and burgers are satisfying, and the side options make ordering simple.",
+				"name": "Regular guest",
+				"role": "Grill menu"
 			},
 			{
-				"quote": "The level of craftsmanship was impressive. They treated my home like it was their own.",
-				"name": "Michael Brown",
-				"role": "Property Manager"
+				"quote": "The daily dishes are a practical option when you want something warm and homestyle during the workday.",
+				"name": "Customer",
+				"role": "Daily menu"
 			}
 		]
 	}

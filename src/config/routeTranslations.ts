@@ -1,22 +1,20 @@
 import type { Locale } from "./siteSettings";
 
 export const routeTranslations: Record<Locale, Record<string, string>> = {
+  hr: {
+    "about": "o-nama",
+    "projects": "jelovnik",
+    "project-1": "grill-ponuda",
+    "project-2": "dnevna-ponuda",
+    "reviews": "recenzije",
+  },
   en: {
     "about": "about",
-    "projects": "projects",
-    "project-1": "project-1",
-    "project-2": "project-2",
+    "projects": "menu",
+    "project-1": "grill-menu",
+    "project-2": "daily-menu",
     "reviews": "reviews",
-  },
-  fr: {
-    "about": "a-propos",
-    "projects": "projets",
-    "project-1": "projet-1",
-    "project-2": "projet-2",
-    "reviews": "avis",
   },
 };
 
-export const localizedCollections = {
-  blog: { en: "blog", fr: "blog" },
-} as const;
+export const localizedCollections = {} as const;

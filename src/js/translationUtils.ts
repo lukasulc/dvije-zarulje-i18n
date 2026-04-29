@@ -118,10 +118,8 @@ let dynamicRouteCache: RouteMap | null = null;
  * groups entries by mappingKey, and builds a full route translation map
  * that merges static routes with dynamic collection-based routes.
  *
- * For example, a blog entry `en/fourth-post-in-english` with mappingKey "post-4"
- * paired with `fr/quatrieme-article-en-francais` produces:
- *   en: { "blog/fourth-post-in-english": "blog/fourth-post-in-english" }
- *   fr: { "blog/fourth-post-in-english": "blog/quatrieme-article-en-francais" }
+ * For example, paired localized content entries with the same mappingKey produce
+ * equivalent URLs for each configured locale.
  */
 async function generateDynamicRouteTranslations(): Promise<RouteMap> {
 	if (dynamicRouteCache) return dynamicRouteCache;
@@ -183,7 +181,7 @@ async function generateDynamicRouteTranslations(): Promise<RouteMap> {
 /**
  * Switch a URL to another locale. Used by the language switcher and hreflang tags.
  * Takes the current URL and a target locale, returns the equivalent path in the target locale.
- * Now async because it needs to look up blog slug translations from content collections.
+ * Async because it can look up slug translations from content collections.
  */
 export async function getLocalizedPathname(
 	locale: Locale,
@@ -213,8 +211,7 @@ export async function getLocalizedPathname(
 
 	const targetRoutes = allRoutes[locale] || {};
 
-	// Try full-path lookup first (handles multi-segment keys like blog slugs:
-	// "blog/deuxieme-article-en-francais" → "blog/second-post-in-english")
+	// Try full-path lookup first for multi-segment keys.
 	const fullPath = neutralSegments.join("/");
 	if (reverseMap[fullPath] !== undefined) {
 		const neutralizedPath = reverseMap[fullPath];

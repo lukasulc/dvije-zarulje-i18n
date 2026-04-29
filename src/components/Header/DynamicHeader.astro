@@ -1,5 +1,6 @@
 ---
 import navData from "@data/navData.json";
+import { BUSINESS } from "@data/client";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getLocaleFromUrl } from "@js/localeUtils";
@@ -72,12 +73,28 @@ const locale = getLocaleFromUrl(Astro.url);
 						))
 					}
 				</ul>
+				<div class="cs-socials" aria-label="Social links">
+					<a href={BUSINESS.socials.instagram} class="cs-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+						<Icon name="instagram" />
+					</a>
+					<a href={BUSINESS.socials.facebook} class="cs-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+						<Icon name="facebook" />
+					</a>
+				</div>
 				<!-- shown on mobile menu by default  -->
 				<div class="cs-shown cs-settings">
 					<Settings />
 				</div>
 			</div>
 		</nav>
+		<div class="cs-hidden cs-socials cs-socials-desktop" aria-label="Social links">
+			<a href={BUSINESS.socials.instagram} class="cs-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+				<Icon name="instagram" />
+			</a>
+			<a href={BUSINESS.socials.facebook} class="cs-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+				<Icon name="facebook" />
+			</a>
+		</div>
 		<!-- shown on desktop menu by default  -->
 		<div class="cs-hidden cs-settings">
 			<Settings />
@@ -384,6 +401,39 @@ const locale = getLocaleFromUrl(Astro.url);
 			.cs-button-solid {
 				display: none;
 			}
+
+			.cs-socials {
+				display: flex;
+				justify-content: flex-end;
+				gap: (10/16rem);
+			}
+
+			.cs-social-link {
+				width: (44/16rem);
+				height: (44/16rem);
+				color: var(--headerColor);
+				border: 1px solid hsl(224, 6%, 77%);
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				transition:
+					color 0.3s,
+					border-color 0.3s,
+					background-color 0.3s;
+
+				svg {
+					width: (21/16rem);
+					height: (21/16rem);
+				}
+
+				&:hover,
+				&:focus-visible {
+					color: #fff;
+					border-color: var(--primary);
+					background-color: var(--primary);
+				}
+			}
 		}
 	}
 
@@ -408,6 +458,11 @@ const locale = getLocaleFromUrl(Astro.url);
 
 				.cs-li-link {
 					color: var(--bodyTextColorWhite);
+				}
+
+				.cs-social-link {
+					color: var(--bodyTextColorWhite);
+					border-color: hsl(224, 10%, 35%);
 				}
 			}
 		}
@@ -817,6 +872,42 @@ const locale = getLocaleFromUrl(Astro.url);
 			.cs-settings.cs-shown {
 				display: none;
 			}
+
+			.cs-ul-wrapper > .cs-socials {
+				display: none;
+			}
+
+			.cs-socials-desktop {
+				display: flex;
+				gap: (8/16rem);
+			}
+
+			.cs-social-link {
+				width: (40/16rem);
+				height: (40/16rem);
+				color: var(--bodyTextColor);
+				border: 1px solid hsl(224, 6%, 77%);
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				transition:
+					color 0.3s,
+					border-color 0.3s,
+					background-color 0.3s;
+
+				svg {
+					width: (20/16rem);
+					height: (20/16rem);
+				}
+
+				&:hover,
+				&:focus-visible {
+					color: #fff;
+					border-color: var(--primary);
+					background-color: var(--primary);
+				}
+			}
 		}
 	}
 
@@ -840,6 +931,11 @@ const locale = getLocaleFromUrl(Astro.url);
 
 				.cs-li-link {
 					color: var(--bodyTextColorWhite);
+				}
+
+				.cs-social-link {
+					color: var(--bodyTextColorWhite);
+					border-color: hsl(224, 10%, 35%);
 				}
 
 				.cs-li-link {

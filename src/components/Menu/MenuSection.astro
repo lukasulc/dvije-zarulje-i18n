@@ -1,0 +1,285 @@
+---
+import menuData from "@data/menu.json";
+import type { Locale } from "@config/siteSettings";
+
+interface LocalizedText {
+	hr: string;
+	en: string;
+}
+
+interface MenuCategory {
+	id: string;
+	title: LocalizedText;
+	description: LocalizedText;
+}
+
+interface MenuItem {
+	id: string;
+	categoryId: string;
+	name: LocalizedText;
+	description: LocalizedText;
+	price: string;
+	badges: Record<Locale, string[]>;
+	available: boolean;
+	featured?: boolean;
+}
+
+interface Props {
+	locale: Locale;
+	categoryIds: string[];
+	intro?: string;
+}
+
+const { locale, categoryIds, intro } = Astro.props as Props;
+const categories = menuData.categories as MenuCategory[];
+const items = menuData.items as MenuItem[];
+const currency = menuData.currency;
+const updatedAt = new Date(`${menuData.updatedAt}T12:00:00`);
+const dateFormatter = new Intl.DateTimeFormat(locale === "hr" ? "hr-HR" : "en-US", {
+	day: "numeric",
+	month: "long",
+	year: "numeric",
+});
+const priceFormatter = new Intl.NumberFormat(locale === "hr" ? "hr-HR" : "en-US", {
+	style: "currency",
+	currency,
+});
+
+const selectedCategories = categories.filter((category) =>
+	categoryIds.includes(category.id),
+);
+
+const unavailableLabel = locale === "hr" ? "Trenutno nedostupno" : "Currently unavailable";
+const featuredLabel = locale === "hr" ? "Preporuka" : "Recommended";
+const updatedLabel = locale === "hr" ? "Ažurirano" : "Updated";
+---
+
+<section id="menu-section" class="menu-section">
+	<div class="menu-container">
+		<div class="menu-heading">
+			<span class="cs-topper">{locale === "hr" ? "Jelovnik" : "Menu"}</span>
+			<h2 class="cs-title">{locale === "hr" ? "Ponuda Dvije Žarulje" : "Dvije Žarulje Menu"}</h2>
+			{intro && <p class="cs-text">{intro}</p>}
+			<p class="menu-updated">{updatedLabel}: <time datetime={menuData.updatedAt}>{dateFormatter.format(updatedAt)}</time></p>
+		</div>
+
+		<div class="menu-categories">
+			{
+				selectedCategories.map((category) => {
+					const categoryItems = items.filter(
+						(item) => item.categoryId === category.id,
+					);
+
+					return (
+						<section class="menu-category" aria-labelledby={`menu-${category.id}`}>
+							<div class="category-heading">
+								<h3 id={`menu-${category.id}`}>{category.title[locale]}</h3>
+								<p>{category.description[locale]}</p>
+							</div>
+
+							<ul class="menu-list">
+								{categoryItems.map((item) => (
+									<li class:list={["menu-item", { "is-muted": !item.available, "is-featured": item.featured }]}>
+										<div class="item-copy">
+											<div class="item-title-row">
+												<h4>{item.name[locale]}</h4>
+												{item.featured && <span class="badge badge-featured">{featuredLabel}</span>}
+												{!item.available && <span class="badge">{unavailableLabel}</span>}
+											</div>
+											<p>{item.description[locale]}</p>
+											{item.badges?.[locale]?.length > 0 && (
+												<div class="item-badges">
+													{item.badges[locale].map((badge) => (
+														<span class="badge">{badge}</span>
+													))}
+												</div>
+											)}
+										</div>
+										<strong class="price">{priceFormatter.format(Number(item.price))}</strong>
+									</li>
+								))}
+							</ul>
+						</section>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>
+
+<style lang="less">
+	.menu-section {
+		padding: var(--sectionPadding);
+		background:
+			linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
+			radial-gradient(circle at top left, rgba(192, 0, 101, 0.14), transparent 32rem);
+	}
+
+	.menu-container {
+		width: min(100%, 72rem);
+		margin: 0 auto;
+	}
+
+	.menu-heading {
+		max-width: 46rem;
+		margin-bottom: clamp(2rem, 5vw, 4rem);
+	}
+
+	.menu-heading .cs-title,
+	.menu-heading .cs-text {
+		text-align: left;
+		margin-left: 0;
+	}
+
+	.menu-updated {
+		margin-top: 1rem;
+		color: var(--bodyTextColor);
+		opacity: 0.72;
+	}
+
+	.menu-categories {
+		display: grid;
+		gap: clamp(1.5rem, 4vw, 2.5rem);
+	}
+
+	.menu-category {
+		display: grid;
+		grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+		gap: clamp(1.5rem, 4vw, 3rem);
+		padding-block: clamp(1.5rem, 4vw, 2.5rem);
+		border-top: 1px solid rgba(26, 26, 26, 0.14);
+	}
+
+	.category-heading h3 {
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
+		line-height: 1.1;
+		margin-bottom: 0.75rem;
+		color: var(--headerColor);
+	}
+
+	.category-heading p {
+		max-width: 22rem;
+		color: var(--bodyTextColor);
+	}
+
+	.menu-list {
+		display: grid;
+		gap: 1rem;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.menu-item {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 1rem;
+		align-items: start;
+		padding: clamp(1rem, 2.5vw, 1.35rem);
+		background: #fff;
+		border: 1px solid rgba(26, 26, 26, 0.1);
+		border-radius: 8px;
+		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+	}
+
+	.menu-item.is-featured {
+		border-color: color-mix(in srgb, var(--primary) 55%, #fff);
+	}
+
+	.menu-item.is-muted {
+		opacity: 0.6;
+	}
+
+	.item-title-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.item-title-row h4 {
+		font-size: clamp(1.05rem, 2vw, 1.25rem);
+		line-height: 1.2;
+		color: var(--headerColor);
+	}
+
+	.item-copy p {
+		color: var(--bodyTextColor);
+		opacity: 0.82;
+	}
+
+	.item-badges {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-top: 0.85rem;
+	}
+
+	.badge {
+		font-size: 0.75rem;
+		line-height: 1;
+		font-weight: 700;
+		display: inline-flex;
+		align-items: center;
+		min-height: 1.55rem;
+		padding: 0.25rem 0.55rem;
+		color: var(--primary);
+		background: color-mix(in srgb, var(--primary) 9%, #fff);
+		border: 1px solid color-mix(in srgb, var(--primary) 18%, #fff);
+		border-radius: 999px;
+	}
+
+	.badge-featured {
+		color: #fff;
+		background: var(--primary);
+		border-color: var(--primary);
+	}
+
+	.price {
+		font-size: clamp(1.1rem, 2vw, 1.35rem);
+		line-height: 1.1;
+		color: var(--headerColor);
+		white-space: nowrap;
+	}
+
+	@media only screen and (max-width: 48rem) {
+		.menu-category {
+			grid-template-columns: 1fr;
+		}
+
+		.menu-item {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	body.dark-mode {
+		.menu-section {
+			background: var(--dark);
+		}
+
+		.menu-category {
+			border-top-color: rgba(255, 255, 255, 0.16);
+		}
+
+		.category-heading h3,
+		.item-title-row h4,
+		.price,
+		.menu-heading .cs-title {
+			color: var(--bodyTextColorWhite);
+		}
+
+		.category-heading p,
+		.item-copy p,
+		.menu-updated,
+		.menu-heading .cs-text {
+			color: var(--bodyTextColorWhite);
+			opacity: 0.82;
+		}
+
+		.menu-item {
+			background: var(--medium);
+			border-color: rgba(255, 255, 255, 0.12);
+		}
+	}
+</style>

@@ -3,10 +3,10 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-	site: "https://www.yourwebsite.com", // update me!
+	site: "https://www.dvije-zarulje.hr",
 	i18n: {
-		defaultLocale: "en",
-		locales: ["en", "fr"],
+		defaultLocale: "hr",
+		locales: ["hr", "en"],
 		routing: {
 			prefixDefaultLocale: false,
 		},
@@ -17,10 +17,10 @@ export default defineConfig({
 		sitemap({
 			filter: (page) => !page.includes("/admin"),
 			i18n: {
-				defaultLocale: "en",
+				defaultLocale: "hr",
 				locales: {
+					hr: "hr-HR",
 					en: "en-US",
-					fr: "fr-FR",
 				},
 			},
 		}),

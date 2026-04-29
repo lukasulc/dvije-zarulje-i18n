@@ -15,7 +15,7 @@ const t = useTranslations(locale);
 
 <BaseLayout
   title={t("contact:landing")}
-  description="Meta description for the page"
+  description={t("contact:p-1")}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
@@ -88,9 +88,12 @@ const t = useTranslations(locale);
         >
       </form>
       <div class="cs-right-section">
-        <!--Email-->
-        <span class="cs-header">{t("contact:form.email")}</span>
-        <a class="cs-link" href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
+        {BUSINESS.email && (
+          <>
+            <span class="cs-header">{t("contact:form.email")}</span>
+            <a class="cs-link" href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
+          </>
+        )}
         <!--Phone-->
         <span class="cs-header">{t("contact:form.phone")}</span>
         <a class="cs-link" href={`tel:${BUSINESS.phoneForTel}`}
@@ -101,11 +104,10 @@ const t = useTranslations(locale);
         <a class="cs-link" href={BUSINESS.address.mapLink}>
           {BUSINESS.address.lineOne},
           <br />
-          {BUSINESS.address.lineTwo},
-          <br />
+          {BUSINESS.address.lineTwo && <>{BUSINESS.address.lineTwo},<br /></>}
           <span class="cs-block">
             {BUSINESS.address.city}
-            {BUSINESS.address.state}
+            {BUSINESS.address.state && ` ${BUSINESS.address.state}`}
             {BUSINESS.address.zip}
           </span>
         </a>

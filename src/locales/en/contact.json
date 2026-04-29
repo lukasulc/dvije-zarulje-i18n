@@ -1,16 +1,16 @@
 {
-    "landing": "Contact",
-    "topper": "Contact",
-    "title": "Get in touch",
-    "p-1": "Tell us Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.",
-    "form": {
-        "name": "Name",
-        "email": "Email",
-        "phone": "Phone",
-        "how": "How did you find us?",
-        "message": "Message",
-        "message-placeholder": "I'd be interested in...",
-        "address": "Address"
-    },
-    "cta": "Submit message"
+	"landing": "Contact",
+	"topper": "Contact",
+	"title": "Visit Dvije Žarulje",
+	"p-1": "Find us at Ulica Brune Bušića 28 in Zagreb. For the current offer, orders and questions, contact us by phone, message or social media.",
+	"form": {
+		"name": "Name",
+		"email": "Email",
+		"phone": "Phone",
+		"how": "How did you find us?",
+		"message": "Message",
+		"message-placeholder": "I'd like to ask about an order, offer or reservation...",
+		"address": "Address"
+	},
+	"cta": "Send message"
 }

@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTA from "@components/CTA/CTA.astro";
+import Banner from "@components/Banner/Banner.astro";
+import MenuSection from "@components/Menu/MenuSection.astro";
+import { getLocaleFromUrl } from "@js/localeUtils";
+import { useTranslations } from "@js/translationUtils";
+import landingImage from "@assets/images/landing.jpg";
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t("project-2")} description={t("home:extra.p2")}>
+	<Banner title={t("project-2")} image={landingImage} />
+	<MenuSection
+		locale={locale}
+		categoryIds={["daily", "fried", "salads", "sides"]}
+		intro={t("home:extra.p2")}
+	/>
+	<CTA />
+</BaseLayout>
