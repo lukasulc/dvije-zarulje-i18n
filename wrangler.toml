@@ -6,5 +6,9 @@ main = "worker/index.js"
 directory = "dist"
 binding = "ASSETS"
 
+[vars]
+CONTACT_TO_EMAIL = "contact@lukasulc.com"
+CONTACT_FROM_EMAIL = "no-reply@dvije-zarulje.hr"
+
 [[send_email]]
 name = "EMAIL"

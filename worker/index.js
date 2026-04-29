@@ -104,6 +104,12 @@ async function handleContact(request, env) {
 	const from = cleanHeader(env.CONTACT_FROM_EMAIL || "kontakt@dvije-zarulje.hr", 200);
 
 	if (!env.EMAIL || !to || !from) {
+		console.error("Contact email configuration is incomplete.", {
+			hasEmailBinding: Boolean(env.EMAIL),
+			hasContactToEmail: Boolean(to),
+			hasContactFromEmail: Boolean(from),
+		});
+
 		return jsonResponse({ ok: false, message: copy.error }, 500);
 	}
 
@@ -114,7 +120,13 @@ async function handleContact(request, env) {
 
 	try {
 		await env.EMAIL.send(new EmailMessage(from, to, rawEmail));
-	} catch {
+	} catch (error) {
+		console.error("Contact email send failed.", {
+			message: error instanceof Error ? error.message : String(error),
+			from,
+			to,
+		});
+
 		return jsonResponse({ ok: false, message: copy.error }, 502);
 	}
 
