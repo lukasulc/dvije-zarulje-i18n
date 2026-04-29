@@ -1,80 +1,131 @@
 backend:
-    name: github
-    repo: lukasulc/dvije-zarulje-i18n
-    branch: main
+  name: github
+  repo: lukasulc/dvije-zarulje-i18n
+  branch: main
 
-site_url: https://www.dvije-zarulje.hr
-display_url: https://www.dvije-zarulje.hr
+site_url: https://dvije-zarulje.lukasulc.com
+display_url: https://dvije-zarulje.lukasulc.com
 
 media_folder: src/assets/images/uploads
 public_folder: "@assets/images/uploads"
 
 i18n:
-    structure: multiple_folders
-    locales: [hr, en]
-    default_locale: hr
+  structure: multiple_folders
+  locales: [hr, en]
+  default_locale: hr
 
 collections:
-    - name: "site-data"
-      label: "Site data"
-      files:
-          - name: "menu"
-            label: "Restaurant menu"
-            file: "src/data/menu.json"
+  - name: "site-data"
+    label: "Site data"
+    files:
+      - name: "menu"
+        label: "Restaurant menu"
+        file: "src/data/menu.json"
+        fields:
+          - {
+              label: "Currency",
+              name: "currency",
+              widget: "string",
+              default: "EUR",
+            }
+          - {
+              label: "Last updated",
+              name: "updatedAt",
+              widget: "date",
+              format: "YYYY-MM-DD",
+            }
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.title.hr}}"
             fields:
-                - { label: "Currency", name: "currency", widget: "string", default: "EUR" }
-                - { label: "Last updated", name: "updatedAt", widget: "date", format: "YYYY-MM-DD" }
-                - label: "Categories"
-                  name: "categories"
-                  widget: "list"
-                  summary: "{{fields.title.hr}}"
-                  fields:
-                      - { label: "ID", name: "id", widget: "string", hint: "Use short lowercase IDs such as grill, daily, fried, salads, sides. Item category IDs must match these." }
-                      - label: "Title"
-                        name: "title"
-                        widget: "object"
-                        fields:
-                            - { label: "Croatian", name: "hr", widget: "string" }
-                            - { label: "English", name: "en", widget: "string" }
-                      - label: "Description"
-                        name: "description"
-                        widget: "object"
-                        fields:
-                            - { label: "Croatian", name: "hr", widget: "text" }
-                            - { label: "English", name: "en", widget: "text" }
-                - label: "Menu items"
-                  name: "items"
-                  widget: "list"
-                  summary: "{{fields.name.hr}} - {{fields.price}}"
-                  fields:
-                      - { label: "ID", name: "id", widget: "string", hint: "Unique lowercase ID, for example cevapi-veliki." }
-                      - { label: "Category ID", name: "categoryId", widget: "string", hint: "Must match one of the category IDs above." }
-                      - label: "Name"
-                        name: "name"
-                        widget: "object"
-                        fields:
-                            - { label: "Croatian", name: "hr", widget: "string" }
-                            - { label: "English", name: "en", widget: "string" }
-                      - label: "Description"
-                        name: "description"
-                        widget: "object"
-                        fields:
-                            - { label: "Croatian", name: "hr", widget: "text", required: false }
-                            - { label: "English", name: "en", widget: "text", required: false }
-                      - { label: "Price", name: "price", widget: "string", hint: "Use decimal format, for example 9.00." }
-                      - label: "Badges"
-                        name: "badges"
-                        widget: "object"
-                        fields:
-                            - label: "Croatian"
-                              name: "hr"
-                              widget: "list"
-                              required: false
-                              field: { label: "Badge", name: "badge", widget: "string" }
-                            - label: "English"
-                              name: "en"
-                              widget: "list"
-                              required: false
-                              field: { label: "Badge", name: "badge", widget: "string" }
-                      - { label: "Available", name: "available", widget: "boolean", default: true }
-                      - { label: "Recommended", name: "featured", widget: "boolean", default: false, required: false }
+              - {
+                  label: "ID",
+                  name: "id",
+                  widget: "string",
+                  hint: "Use short lowercase IDs such as grill, daily, fried, salads, sides. Item category IDs must match these.",
+                }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Croatian", name: "hr", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - { label: "Croatian", name: "hr", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+          - label: "Menu items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name.hr}} - {{fields.price}}"
+            fields:
+              - {
+                  label: "ID",
+                  name: "id",
+                  widget: "string",
+                  hint: "Unique lowercase ID, for example cevapi-veliki.",
+                }
+              - {
+                  label: "Category ID",
+                  name: "categoryId",
+                  widget: "string",
+                  hint: "Must match one of the category IDs above.",
+                }
+              - label: "Name"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "Croatian", name: "hr", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - {
+                      label: "Croatian",
+                      name: "hr",
+                      widget: "text",
+                      required: false,
+                    }
+                  - {
+                      label: "English",
+                      name: "en",
+                      widget: "text",
+                      required: false,
+                    }
+              - {
+                  label: "Price",
+                  name: "price",
+                  widget: "string",
+                  hint: "Use decimal format, for example 9.00.",
+                }
+              - label: "Badges"
+                name: "badges"
+                widget: "object"
+                fields:
+                  - label: "Croatian"
+                    name: "hr"
+                    widget: "list"
+                    required: false
+                    field: { label: "Badge", name: "badge", widget: "string" }
+                  - label: "English"
+                    name: "en"
+                    widget: "list"
+                    required: false
+                    field: { label: "Badge", name: "badge", widget: "string" }
+              - {
+                  label: "Available",
+                  name: "available",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "Recommended",
+                  name: "featured",
+                  widget: "boolean",
+                  default: false,
+                  required: false,
+                }
