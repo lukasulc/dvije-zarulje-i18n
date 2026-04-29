@@ -33,6 +33,7 @@ export default defineConfig({
 			fallbacks: ["Arial", "sans-serif"],
 			weights: [400, 700, 900],
 			styles: ["normal"],
+			subsets: ["latin-ext", "latin"],
 		},
 	],
 });
