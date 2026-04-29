@@ -21,8 +21,24 @@ In the Cloudflare dashboard, keep only the Pages project for this site.
 - Environment variables:
   - `SPREADSHEET_ID`
   - `GOOGLE_SHEETS_GID` if the sheet tab is not gid `0`
+  - `CONTACT_TO_EMAIL`
+  - `CONTACT_FROM_EMAIL`
 
 Do not create a Worker just to get deploy hooks. The scheduled GitHub workflow deploys to Pages directly.
+
+## Contact Form Email
+
+The contact form submits to the Cloudflare Pages Function at `/api/contact`.
+Email delivery uses Cloudflare Email Sending through the `EMAIL` binding in
+`wrangler.toml`, so the Pages project needs these production environment
+variables:
+
+- `CONTACT_TO_EMAIL` - the inbox that should receive contact messages.
+- `CONTACT_FROM_EMAIL` - the sender address on your Cloudflare email domain, for example `no-reply@dvije-zarulje.hr`.
+
+In Cloudflare, enable Email Sending for the domain and finish any DNS records
+Cloudflare asks for. The sender address must belong to the domain you onboard
+for Cloudflare Email Sending.
 
 ## GitHub Settings
 

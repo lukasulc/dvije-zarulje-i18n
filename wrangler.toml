@@ -1,0 +1,6 @@
+name = "dvije-zarulje"
+compatibility_date = "2026-04-30"
+pages_build_output_dir = "dist"
+
+[[send_email]]
+name = "EMAIL"

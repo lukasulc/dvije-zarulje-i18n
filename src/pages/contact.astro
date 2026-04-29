@@ -29,7 +29,14 @@ const t = useTranslations(locale);
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
+      <form
+        id="cs-form"
+        name="Contact Form"
+        method="post"
+        action="/api/contact"
+        data-success="Hvala! Poruka je poslana."
+        data-error="Poruka se trenutno ne moze poslati. Molimo pokusajte kasnije ili nas kontaktirajte telefonom."
+      >
         <div class="cs-content">
           <span class="cs-topper">{t("contact:topper")}</span>
           <h2 class="cs-title">{t("contact:title")}</h2>
@@ -51,7 +58,7 @@ const t = useTranslations(locale);
           {t("contact:form.email")}
           <input
             required
-            type="text"
+            type="email"
             id="email"
             name="email"
             placeholder={t("contact:form.email")}
@@ -80,10 +87,16 @@ const t = useTranslations(locale);
           {t("contact:form.message")}
           <textarea
             required
-            name="Message"
+            name="message"
             id="message"
             placeholder={t("contact:form.message-placeholder")}></textarea>
         </label>
+        <input type="hidden" name="locale" value={locale} />
+        <label class="cs-honeypot" aria-hidden="true" tabindex="-1">
+          Website
+          <input type="text" name="website" autocomplete="off" tabindex="-1" />
+        </label>
+        <p class="cs-form-status" data-contact-status role="status" aria-live="polite"></p>
         <button class="cs-button-solid" type="submit">{t("contact:cta")}</button
         >
       </form>
@@ -118,6 +131,56 @@ const t = useTranslations(locale);
     </div>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  document.querySelectorAll("form[data-success][data-error]").forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const status = form.querySelector("[data-contact-status]");
+      const button = form.querySelector('button[type="submit"]');
+      const defaultButtonText = button?.textContent;
+
+      if (status) {
+        status.textContent = "";
+        status.dataset.state = "";
+      }
+
+      if (button) {
+        button.disabled = true;
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { accept: "application/json" },
+        });
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok || data.ok === false) {
+          throw new Error(data.message || form.dataset.error);
+        }
+
+        form.reset();
+        if (status) {
+          status.textContent = data.message || form.dataset.success;
+          status.dataset.state = "success";
+        }
+      } catch (error) {
+        if (status) {
+          status.textContent = error.message || form.dataset.error;
+          status.dataset.state = "error";
+        }
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = defaultButtonText;
+        }
+      }
+    });
+  });
+</script>
 
 <style lang="less">
   /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
@@ -194,6 +257,26 @@ const t = useTranslations(locale);
           margin-bottom: clamp(2rem, 6.3vw, 3rem);
         }
 
+        .cs-honeypot {
+          display: none;
+        }
+
+        .cs-form-status {
+          font-size: (16/16rem);
+          line-height: 1.5em;
+          width: 100%;
+          min-height: (24/16rem);
+          margin: 0 0 (16/16rem);
+
+          &[data-state="success"] {
+            color: #216e39;
+          }
+
+          &[data-state="error"] {
+            color: #b42318;
+          }
+        }
+
         input,
         textarea {
           font-size: (16/16rem);
@@ -221,6 +304,11 @@ const t = useTranslations(locale);
         .cs-button-solid {
           width: 100%;
           border: none;
+
+          &:disabled {
+            cursor: wait;
+            opacity: 0.7;
+          }
         }
       }
 
