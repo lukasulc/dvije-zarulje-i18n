@@ -3,6 +3,10 @@ compatibility_date = "2026-04-29"
 main = "worker/index.js"
 
 [[routes]]
+pattern = "dvije-zarulje.hr"
+custom_domain = true
+
+[[routes]]
 pattern = "dvije-zarulje.lukasulc.com"
 custom_domain = true
 
