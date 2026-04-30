@@ -15,7 +15,7 @@ directory = "dist"
 binding = "ASSETS"
 
 [vars]
-CONTACT_TO_EMAIL = "contact@lukasulc.com"
+CONTACT_TO_EMAIL = "contact@dvije-zarulje.hr"
 CONTACT_FROM_EMAIL = "no-reply@dvije-zarulje.hr"
 
 [[send_email]]
