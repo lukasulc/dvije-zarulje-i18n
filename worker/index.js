@@ -114,7 +114,7 @@ async function handleContact(request, env) {
 	}
 
 	const submittedAt = new Date().toISOString();
-	const subject = `Nova poruka sa stranice: ${name}`;
+	const subject = `Nova poruka na Dvije Žarulje od: ${name}`;
 	const body = buildEmailBody({ name, email, phone, findUs, submittedAt, message });
 	const rawEmail = buildRawEmail({ from, to, replyTo: email, subject, body });
 
