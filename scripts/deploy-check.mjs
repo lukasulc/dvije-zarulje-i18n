@@ -4,10 +4,75 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 
+const MENU_CATEGORY_VALUES = [
+	"Starter",
+	"Main",
+	"Dessert",
+	"Drink",
+	"Side",
+	"Grill",
+	"Daily",
+	"Fried",
+	"Salads",
+];
+
+const menuCategoryAliases = {
+	starter: "Starter",
+	starters: "Starter",
+	predjela: "Starter",
+	predjelo: "Starter",
+	main: "Main",
+	mains: "Main",
+	glavnajela: "Main",
+	glavnojelo: "Main",
+	dessert: "Dessert",
+	desserts: "Dessert",
+	deserti: "Dessert",
+	desert: "Dessert",
+	drink: "Drink",
+	drinks: "Drink",
+	pica: "Drink",
+	grill: "grill",
+	grillmenu: "grill",
+	grillponuda: "grill",
+	rostilj: "grill",
+	daily: "daily",
+	dailymenu: "daily",
+	dnevna: "daily",
+	dnevnaponuda: "daily",
+	fried: "fried",
+	frieddishes: "fried",
+	pohana: "fried",
+	pohanajela: "fried",
+	salad: "salads",
+	salads: "salads",
+	salate: "salads",
+	side: "Side",
+	sides: "Side",
+	prilog: "Side",
+	prilozi: "Side",
+	priloziidodaci: "Side",
+};
+
+function normalizeMenuCategory(value) {
+	if (typeof value !== "string") {
+		return value;
+	}
+
+	const normalized = value
+		.trim()
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/[^a-z0-9]+/g, "");
+
+	return menuCategoryAliases[normalized] ?? value;
+}
+
 const MenuSchema = z.array(
 	z.object({
 		price: z.coerce.number().positive(),
-		category: z.enum(["Starter", "Main", "Dessert", "Drink", "Side"]),
+		category: z.preprocess(normalizeMenuCategory, z.enum(MENU_CATEGORY_VALUES)),
 		name: z.string().trim().min(1),
 		description: z.string().trim().optional(),
 		badges: z.string().trim().optional(),

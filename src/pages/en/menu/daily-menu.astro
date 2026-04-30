@@ -6,13 +6,12 @@ import MenuSection from "@components/Menu/MenuSection.astro";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import { useTranslations } from "@js/translationUtils";
 import landingImage from "@assets/images/food/stew-and-beer.jpg";
-import { getAstroPieMenuData } from "../../../googleSheets";
+import { getAstroPieMenuData, getMenuPageCategoryIds } from "../../../googleSheets";
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 const menuData = await getAstroPieMenuData();
-const categoryIds =
-	menuData.source === "sheet" ? ["Starter", "Main", "Dessert", "Drink"] : ["daily", "fried", "salads", "sides"];
+const categoryIds = getMenuPageCategoryIds(menuData, "daily");
 ---
 
 <BaseLayout title={t("project-2")} description={t("home:extra.p2")}>

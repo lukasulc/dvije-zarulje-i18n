@@ -1,6 +1,77 @@
 import { z } from "zod";
 
-export const MenuCategorySchema = z.enum(["Starter", "Main", "Dessert", "Drink", "Side"]);
+export const MENU_CATEGORY_VALUES = [
+	"Starter",
+	"Main",
+	"Dessert",
+	"Drink",
+	"Side",
+	"grill",
+	"daily",
+	"fried",
+	"salads",
+	"sides",
+] as const;
+
+type MenuCategoryValue = (typeof MENU_CATEGORY_VALUES)[number];
+
+const menuCategoryAliases: Record<string, MenuCategoryValue> = {
+	starter: "Starter",
+	starters: "Starter",
+	predjela: "Starter",
+	predjelo: "Starter",
+	main: "Main",
+	mains: "Main",
+	glavnajela: "Main",
+	glavnojelo: "Main",
+	dessert: "Dessert",
+	desserts: "Dessert",
+	deserti: "Dessert",
+	desert: "Dessert",
+	drink: "Drink",
+	drinks: "Drink",
+	pica: "Drink",
+	grill: "grill",
+	grillmenu: "grill",
+	grillponuda: "grill",
+	rostilj: "grill",
+	daily: "daily",
+	dailymenu: "daily",
+	dnevna: "daily",
+	dnevnaponuda: "daily",
+	fried: "fried",
+	frieddishes: "fried",
+	pohana: "fried",
+	pohanajela: "fried",
+	salad: "salads",
+	salads: "salads",
+	salate: "salads",
+	side: "Side",
+	sides: "Side",
+	prilog: "Side",
+	prilozi: "Side",
+	priloziidodaci: "Side",
+};
+
+function normalizeMenuCategory(value: unknown): unknown {
+	if (typeof value !== "string") {
+		return value;
+	}
+
+	const normalized = value
+		.trim()
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/[^a-z0-9]+/g, "");
+
+	return menuCategoryAliases[normalized] ?? value;
+}
+
+export const MenuCategorySchema = z.preprocess(
+	normalizeMenuCategory,
+	z.enum(MENU_CATEGORY_VALUES),
+);
 
 export const MenuItemSchema = z.object({
 	name: z.string().trim().min(1, "Menu item name is required"),
