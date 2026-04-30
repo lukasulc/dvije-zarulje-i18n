@@ -5,6 +5,7 @@ import type { ImageMetadata } from "astro";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import { useTranslations } from "@js/translationUtils";
 import Meta from "@components/Meta/Meta.astro";
+import GoogleAnalytics from "@components/Analytics/GoogleAnalytics.astro";
 import DynamicHeader from "@components/Header/DynamicHeader.astro";
 import Footer from "@components/Footer/Footer.astro";
 import "@styles/root.less";
@@ -27,6 +28,7 @@ const t = useTranslations(locale);
 		<Meta title={title} description={description} heroImage={heroImage}>
 			<slot name="schema" slot="schema" />
 		</Meta>
+		<GoogleAnalytics />
 
 		<!-- Astro custom Font API -->
 		<Font cssVariable="--font-primary" preload/>

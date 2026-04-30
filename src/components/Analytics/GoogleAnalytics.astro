@@ -1,0 +1,29 @@
+---
+import { googleAnalyticsId } from "@config/siteSettings";
+
+const measurementId = import.meta.env.PROD ? googleAnalyticsId : "";
+---
+
+{
+	measurementId && (
+		<>
+			<script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+			<script is:inline define:vars={{ measurementId }}>
+				window.dataLayer = window.dataLayer || [];
+				window.gtag = function gtag() {
+					window.dataLayer.push(arguments);
+				};
+				window.gtag("js", new Date());
+
+				function trackPageView() {
+					window.gtag("config", measurementId, {
+						page_path: window.location.pathname + window.location.search,
+						page_title: document.title,
+					});
+				}
+
+				document.addEventListener("astro:page-load", trackPageView);
+			</script>
+		</>
+	)
+}
