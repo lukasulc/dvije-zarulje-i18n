@@ -9,7 +9,7 @@ export const SITE = {
 
 export const BUSINESS = {
 	name: "Dvije Žarulje",
-	email: "contact@lukasulc.com",
+	email: "contact@dvije-zarulje.hr",
 	phoneForTel: "+385951999754",
 	phoneFormatted: "+385 95 199 9754",
 	logo: "/favicon.svg",
