@@ -117,7 +117,7 @@ const categoryOrder: MenuCategory[] = [
 let menuDataPromise: Promise<AstroPieMenuData> | undefined;
 
 const menuPageCategories: Record<MenuPage, MenuCategory[]> = {
-	grill: ["Grill", "Main", "Fried", "Salad", "Side", "Starter", "Dessert", "Drink"],
+	grill: ["Grill", "Fried", "Salad", "Side", "Starter", "Dessert", "Drink"],
 	daily: ["Daily", "Main", "Fried", "Salad", "Side", "Starter", "Dessert", "Drink"],
 };
 
