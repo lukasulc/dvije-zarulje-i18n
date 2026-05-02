@@ -39,39 +39,32 @@ export interface AstroPieMenuData {
 type MenuPage = "grill" | "daily";
 
 const categoryDetails: Record<MenuCategory, Omit<AstroPieMenuCategory, "id">> = {
-	grill: {
+	Grill: {
 		title: { hr: "Grill ponuda", en: "Grill menu" },
 		description: {
 			hr: "Rostilj, lepinja, luk i poznati okusi za konkretan obrok.",
 			en: "Grill dishes with flatbread, onion and familiar flavors for a proper meal.",
 		},
 	},
-	daily: {
+	Daily: {
 		title: { hr: "Dnevna ponuda", en: "Daily menu" },
 		description: {
 			hr: "Kuhana jela i dnevni favoriti. Ponuda se moze mijenjati prema danu.",
 			en: "Cooked dishes and daily favorites. The offer may change by day.",
 		},
 	},
-	fried: {
+	Fried: {
 		title: { hr: "Pohana jela", en: "Fried dishes" },
 		description: {
 			hr: "Klasicna pohana jela s prilogom.",
 			en: "Classic fried dishes with sides.",
 		},
 	},
-	salads: {
+	Salad: {
 		title: { hr: "Salate", en: "Salads" },
 		description: {
 			hr: "Svjezi i peceni dodaci uz glavno jelo.",
 			en: "Fresh and roasted additions for the main dish.",
-		},
-	},
-	sides: {
-		title: { hr: "Prilozi i dodaci", en: "Sides and extras" },
-		description: {
-			hr: "Prilozi, umaci i dodaci za zaokruziti narudzbu.",
-			en: "Sides, sauces and extras to complete the order.",
 		},
 	},
 	Starter: {
@@ -111,22 +104,21 @@ const categoryDetails: Record<MenuCategory, Omit<AstroPieMenuCategory, "id">> = 
 	},
 };
 const categoryOrder: MenuCategory[] = [
-	"grill",
-	"daily",
-	"fried",
-	"salads",
-	"sides",
 	"Starter",
+	"Grill",
+	"Daily",
 	"Main",
+	"Fried",
+	"Salad",
+	"Side",
 	"Dessert",
 	"Drink",
-	"Side",
 ];
 let menuDataPromise: Promise<AstroPieMenuData> | undefined;
 
 const menuPageCategories: Record<MenuPage, MenuCategory[]> = {
-	grill: ["grill", "fried", "salads", "sides", "Starter", "Dessert", "Drink", "Side"],
-	daily: ["daily", "fried", "salads", "sides", "Starter", "Dessert", "Drink", "Side"],
+	grill: ["Grill", "Main", "Fried", "Salad", "Side", "Starter", "Dessert", "Drink"],
+	daily: ["Daily", "Main", "Fried", "Salad", "Side", "Starter", "Dessert", "Drink"],
 };
 
 function getEnv(name: string): string | undefined {
@@ -283,45 +275,6 @@ function parseBadges(value: string | undefined): string[] {
 		.filter(Boolean);
 }
 
-function normalizeSearchText(value: string): string {
-	return value
-		.toLowerCase()
-		.normalize("NFD")
-		.replace(/[\u0300-\u036f]/g, "");
-}
-
-function inferRestaurantCategory(item: MenuItem): MenuCategory {
-	const searchText = normalizeSearchText(
-		[item.name, item.description, item.badges, item.opis, item.znacke].filter(Boolean).join(" "),
-	);
-
-	if (item.category === "Side") {
-		if (/(salad|salate|paprika|vege|povrce|povrce)/.test(searchText)) {
-			return "salads";
-		}
-
-		return "sides";
-	}
-
-	if (item.category !== "Main") {
-		return item.category;
-	}
-
-	if (/(pohan|fried|schnitzel|odrezak|becki|zagreb)/.test(searchText)) {
-		return "fried";
-	}
-
-	if (/(varivo|gulas|daily|dnev|stew|goulash|riba|fish|bakalar|odojak)/.test(searchText)) {
-		return "daily";
-	}
-
-	if (/(grill|rostilj|cevapi|pljeskavica|pileca prsa|batak|vratina|plata)/.test(searchText)) {
-		return "grill";
-	}
-
-	return "daily";
-}
-
 export function getMenuPageCategoryIds(menuData: AstroPieMenuData, page: MenuPage): string[] {
 	const categoryIds = menuPageCategories[page];
 
@@ -389,13 +342,8 @@ async function loadAstroPieMenuData(): Promise<AstroPieMenuData> {
 		return getFallbackMenuData();
 	}
 
-	const displayItems = items.map((item) => ({
-		...item,
-		category: inferRestaurantCategory(item),
-	}));
-
 	const usedCategories = categoryOrder.filter((category) =>
-		displayItems.some((item) => item.category === category),
+		items.some((item) => item.category === category),
 	);
 
 	return {
@@ -406,7 +354,7 @@ async function loadAstroPieMenuData(): Promise<AstroPieMenuData> {
 			id,
 			...categoryDetails[id],
 		})),
-		items: displayItems.map((item, index) => ({
+		items: items.map((item, index) => ({
 			id: `${slugify(item.name) || "menu-item"}-${index + 1}`,
 			categoryId: item.category,
 			name: { hr: item.name, en: item.name },

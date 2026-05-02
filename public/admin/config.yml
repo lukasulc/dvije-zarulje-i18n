@@ -43,7 +43,7 @@ collections:
                   label: "ID",
                   name: "id",
                   widget: "string",
-                  hint: "Use short lowercase IDs such as grill, daily, fried, salads, sides. Item category IDs must match these.",
+                  hint: "Use capitalized category IDs such as Grill, Daily, Fried, Salad, Side. Item category IDs must match these.",
                 }
               - label: "Title"
                 name: "title"
