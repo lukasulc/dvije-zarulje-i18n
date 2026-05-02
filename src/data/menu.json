@@ -1,222 +1,241 @@
 {
 	"currency": "EUR",
-	"updatedAt": "2026-04-29",
+	"updatedAt": "2026-05-02",
 	"categories": [
 		{
-			"id": "grill",
+			"id": "Grill",
 			"title": {
 				"hr": "Grill ponuda",
 				"en": "Grill menu"
 			},
 			"description": {
-				"hr": "Roštilj, lepinja, luk i poznati okusi za konkretan obrok.",
+				"hr": "Rostilj, lepinja, luk i poznati okusi za konkretan obrok.",
 				"en": "Grill dishes with flatbread, onion and familiar flavors for a proper meal."
 			}
 		},
 		{
-			"id": "daily",
+			"id": "Main",
 			"title": {
-				"hr": "Dnevna ponuda",
-				"en": "Daily menu"
+				"hr": "Glavna jela",
+				"en": "Mains"
 			},
 			"description": {
-				"hr": "Kuhana jela i dnevni favoriti. Ponuda se može mijenjati prema danu.",
-				"en": "Cooked dishes and daily favorites. The offer may change by day."
+				"hr": "Glavna jela iz aktualne ponude.",
+				"en": "Main dishes from the current menu."
 			}
 		},
 		{
-			"id": "fried",
-			"title": {
-				"hr": "Pohana jela",
-				"en": "Fried dishes"
-			},
-			"description": {
-				"hr": "Klasična pohana jela s prilogom.",
-				"en": "Classic fried dishes with sides."
-			}
-		},
-		{
-			"id": "salads",
+			"id": "Salad",
 			"title": {
 				"hr": "Salate",
 				"en": "Salads"
 			},
 			"description": {
-				"hr": "Svježi i pečeni dodaci uz glavno jelo.",
+				"hr": "Svjezi i peceni dodaci uz glavno jelo.",
 				"en": "Fresh and roasted additions for the main dish."
 			}
 		},
 		{
-			"id": "sides",
+			"id": "Side",
 			"title": {
 				"hr": "Prilozi i dodaci",
 				"en": "Sides and extras"
 			},
 			"description": {
-				"hr": "Prilozi, umaci i dodaci za zaokružiti narudžbu.",
+				"hr": "Prilozi, umaci i dodaci za zaokruziti narudzbu.",
 				"en": "Sides, sauces and extras to complete the order."
 			}
 		}
 	],
 	"items": [
 		{
-			"id": "plata-dvije-zarulje",
-			"categoryId": "grill",
+			"id": "ajvar",
+			"categoryId": "Side",
 			"name": {
-				"hr": "Plata Dvije Žarulje za tri osobe",
-				"en": "Dvije Žarulje platter for three"
+				"hr": "Ajvar",
+				"en": "Ajvar"
 			},
 			"description": {
-				"hr": "Ćevapi, otkošteni batak i zabatak, gurmanske pljeskavice, vratina sa žara, lepinje i pommes frites.",
-				"en": "Ćevapi, boneless chicken thigh, gourmet burgers, grilled pork neck, flatbread and fries."
+				"hr": "Tradicionalni balkanski prilog od pečene paprike i patlidžana.",
+				"en": "Traditional Balkan relish made from roasted red peppers and eggplant."
 			},
-			"price": "32.50",
+			"price": "3.00",
 			"badges": {
-				"hr": ["Za dijeljenje"],
-				"en": ["For sharing"]
-			},
-			"available": true,
-			"featured": true
-		},
-		{
-			"id": "cevapi-veliki",
-			"categoryId": "grill",
-			"name": {
-				"hr": "Ćevapi u lepinji veliki",
-				"en": "Large ćevapi in flatbread"
-			},
-			"description": {
-				"hr": "10 ćevapa od 100% junetine, lepinja i luk.",
-				"en": "10 beef ćevapi, flatbread and onion."
-			},
-			"price": "9.00",
-			"badges": {
-				"hr": ["100% junetina"],
-				"en": ["100% beef"]
+				"hr": [
+					"Veganski"
+				],
+				"en": [
+					"Vegan"
+				]
 			},
 			"available": true
 		},
 		{
-			"id": "gurmanska-pljeskavica",
-			"categoryId": "grill",
+			"id": "bakalar",
+			"categoryId": "Main",
 			"name": {
-				"hr": "Gurmanska pljeskavica sa žara",
-				"en": "Gourmet grilled burger"
+				"hr": "Bakalar",
+				"en": "Bakalar"
 			},
 			"description": {
-				"hr": "Pljeskavica od 100% junetine punjena špekom i sirom, lepinja i luk.",
-				"en": "Beef burger stuffed with bacon and cheese, served with flatbread and onion."
+				"hr": "Bakalar pripremljen na tradicionalni mediteranski način.",
+				"en": "Dried cod prepared in a traditional Mediterranean style."
 			},
-			"price": "10.30",
+			"price": "10.00",
 			"badges": {
-				"hr": ["Punjeno"],
-				"en": ["Stuffed"]
+				"hr": [
+					"Riba"
+				],
+				"en": [
+					"Fish"
+				]
 			},
 			"available": true
 		},
 		{
-			"id": "pileca-prsa",
-			"categoryId": "grill",
+			"id": "becki-pileci-sa-prilogom",
+			"categoryId": "Main",
 			"name": {
-				"hr": "Pileća prsa sa žara",
-				"en": "Grilled chicken breast"
-			},
-			"description": {
-				"hr": "Pileća prsa sa žara uz lepinju.",
-				"en": "Grilled chicken breast served with flatbread."
-			},
-			"price": "9.20",
-			"badges": {
-				"hr": [],
-				"en": []
-			},
-			"available": true
-		},
-		{
-			"id": "vinski-gulas",
-			"categoryId": "daily",
-			"name": {
-				"hr": "Vinski gulaš s krumpirom",
-				"en": "Wine goulash with potatoes"
-			},
-			"description": {
-				"hr": "Vinski gulaš, krumpir i začini.",
-				"en": "Wine goulash, potatoes and seasoning."
-			},
-			"price": "8.90",
-			"badges": {
-				"hr": ["Dnevno jelo"],
-				"en": ["Daily dish"]
-			},
-			"available": true,
-			"featured": true
-		},
-		{
-			"id": "varivo-grah-kobasica",
-			"categoryId": "daily",
-			"name": {
-				"hr": "Varivo grah s kobasicom",
-				"en": "Bean stew with sausage"
-			},
-			"description": {
-				"hr": "Grah varivo s kobasicom i začinima.",
-				"en": "Bean stew with sausage and seasoning."
-			},
-			"price": "8.60",
-			"badges": {
-				"hr": ["Toplo jelo"],
-				"en": ["Warm dish"]
-			},
-			"available": true
-		},
-		{
-			"id": "zagreb-steak",
-			"categoryId": "fried",
-			"name": {
-				"hr": "Zagrebački odrezak s prilogom",
-				"en": "Zagreb-style schnitzel with side"
-			},
-			"description": {
-				"hr": "Pohani pileći odrezak punjen šunkom i sirom, uz pommes frites.",
-				"en": "Breaded chicken schnitzel stuffed with ham and cheese, served with fries."
-			},
-			"price": "10.90",
-			"badges": {
-				"hr": ["Pohano"],
-				"en": ["Fried"]
-			},
-			"available": true
-		},
-		{
-			"id": "becki-steak",
-			"categoryId": "fried",
-			"name": {
-				"hr": "Bečki odrezak s prilogom",
-				"en": "Wiener schnitzel with side"
+				"hr": "Bečki Pileći Sa Prilogom",
+				"en": "Bečki Pileći Sa Prilogom"
 			},
 			"description": {
 				"hr": "Pohani pileći odrezak uz pommes frites.",
 				"en": "Breaded chicken schnitzel served with fries."
 			},
-			"price": "9.80",
+			"price": "10.00",
 			"badges": {
-				"hr": ["Pohano"],
-				"en": ["Fried"]
+				"hr": [
+					"Meso"
+				],
+				"en": [
+					"Meat"
+				]
 			},
 			"available": true
 		},
 		{
-			"id": "pecena-paprika",
-			"categoryId": "salads",
+			"id": "becki-svinjski-sa-prilogom",
+			"categoryId": "Main",
 			"name": {
-				"hr": "Pečena paprika",
-				"en": "Roasted pepper salad"
+				"hr": "Bečki Svinjski Sa Prilogom",
+				"en": "Bečki Svinjski Sa Prilogom"
 			},
 			"description": {
-				"hr": "Pečene paprike s češnjakom, maslinovim uljem i malo ljute paprike.",
-				"en": "Roasted peppers with garlic, olive oil and a little hot pepper."
+				"hr": "Pohani svinjeći odrezak uz pommes frites.",
+				"en": "Breaded pork chop served with fries."
 			},
-			"price": "3.90",
+			"price": "10.00",
+			"badges": {
+				"hr": [
+					"Meso"
+				],
+				"en": [
+					"Meat"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "boloneze-spageti",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Boloneze Špageti",
+				"en": "Boloneze Špageti"
+			},
+			"description": {
+				"hr": "Špageti s klasičnim umakom od mljevenog mesa i rajčice.",
+				"en": "Spaghetti served with a classic slow-cooked minced meat and tomato sauce."
+			},
+			"price": "8.70",
+			"badges": {
+				"hr": [
+					"Meso"
+				],
+				"en": [
+					"Meat"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "cheeseburger",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Cheeseburger",
+				"en": "Cheeseburger"
+			},
+			"description": {
+				"hr": "Sočan juneći odrezak s rastopljenim sirom, salatom i kiselim krastavcima u mekom pecivu.",
+				"en": "Juicy grilled beef patty with melted cheese, lettuce, and pickles in a soft bun."
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [
+					"Meso"
+				],
+				"en": [
+					"Meat"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "cevapi-sa-lepinjom-mali",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Ćevapi Sa Lepinjom Mali",
+				"en": "Ćevapi Sa Lepinjom Mali"
+			},
+			"description": {
+				"hr": "Pljeskavica sa žara od 100% junetine punjena špekom i sirom, lepinja i luk.",
+				"en": "Small portion of minced meet sticks with bread from the grill"
+			},
+			"price": "8.00",
+			"badges": {
+				"hr": [
+					"Roštilj"
+				],
+				"en": [
+					"Grill"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "cevapi-sa-lepinjom-veliki",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Ćevapi Sa Lepinjom Veliki",
+				"en": "Ćevapi Sa Lepinjom Veliki"
+			},
+			"description": {
+				"hr": "Ćevapi, otkošteni batak i zabatak, gurmanske pljeskavice, vratina sa žara, lepinje i pommes frites.",
+				"en": "Minced meet sticks with bread from the grill"
+			},
+			"price": "10.00",
+			"badges": {
+				"hr": [
+					"Roštilj"
+				],
+				"en": [
+					"Grill"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "dvije-zarulje-meat-lover",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Dvije Žarulje Meat Lover",
+				"en": "Dvije Žarulje Meat Lover"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "16.00",
 			"badges": {
 				"hr": [],
 				"en": []
@@ -224,17 +243,79 @@
 			"available": true
 		},
 		{
-			"id": "pommes",
-			"categoryId": "sides",
+			"id": "fino-varivo",
+			"categoryId": "Main",
 			"name": {
-				"hr": "Pommes frites",
-				"en": "Fries"
+				"hr": "Fino Varivo",
+				"en": "Fino Varivo"
 			},
 			"description": {
-				"hr": "Klasični prilog uz grill i pohana jela.",
-				"en": "A classic side for grill and fried dishes."
+				"hr": "Domaće varivo od svježeg sezonskog povrća.",
+				"en": "Hearty vegetable stew made with seasonal ingredients."
 			},
-			"price": "3.00",
+			"price": "9.00",
+			"badges": {
+				"hr": [
+					"Vegetarijanski"
+				],
+				"en": [
+					"Vegitarian"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "grah-sa-kobasicom",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Grah Sa Kobasicom",
+				"en": "Grah Sa Kobasicom"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "gurmanska-pljeskavica-sa-lepinjom",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Gurmanska Pljeskavica Sa Lepinjom",
+				"en": "Gurmanska Pljeskavica Sa Lepinjom"
+			},
+			"description": {
+				"hr": "Pljeskavica od 100% junetine punjena špekom i sirom, lepinja i luk.",
+				"en": "Grilled beef burger stuffed with bacon and cheese, served with flatbread and onion."
+			},
+			"price": "12.00",
+			"badges": {
+				"hr": [
+					"Roštilj"
+				],
+				"en": [
+					"Grill"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "hamburger",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Hamburger",
+				"en": "Hamburger"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.00",
 			"badges": {
 				"hr": [],
 				"en": []
@@ -243,7 +324,7 @@
 		},
 		{
 			"id": "kajmak",
-			"categoryId": "sides",
+			"categoryId": "Side",
 			"name": {
 				"hr": "Kajmak",
 				"en": "Kajmak"
@@ -252,7 +333,701 @@
 				"hr": "Kremasti dodatak za roštilj.",
 				"en": "A creamy extra for grilled dishes."
 			},
-			"price": "2.90",
+			"price": "4.00",
+			"badges": {
+				"hr": [
+					"Sos"
+				],
+				"en": [
+					"Sauce"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "kecap",
+			"categoryId": "Side",
+			"name": {
+				"hr": "Kečap",
+				"en": "Kečap"
+			},
+			"description": {
+				"hr": "Klasični blagi kečap od rajčice.",
+				"en": "Classic tomato ketchup condiment."
+			},
+			"price": "2.50",
+			"badges": {
+				"hr": [
+					"Veganski",
+					"Bez glutena"
+				],
+				"en": [
+					"Vegan",
+					"Gluten-free"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "lepinja",
+			"categoryId": "Side",
+			"name": {
+				"hr": "Lepinja",
+				"en": "Lepinja"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "2.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "lignje",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Lignje",
+				"en": "Lignje"
+			},
+			"description": {
+				"hr": "Tradicionalni mekani i prozračni somun.",
+				"en": "Traditional soft and airy Balkan flatbread."
+			},
+			"price": "13.00",
+			"badges": {
+				"hr": [
+					"Veganski"
+				],
+				"en": [
+					"Vegan"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "mahune-varivo",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Mahune Varivo",
+				"en": "Mahune Varivo"
+			},
+			"description": {
+				"hr": "Domaće varivo od mahuna s mrkvom i krumpirom.",
+				"en": "Comforting green bean stew with carrots and potatoes."
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [
+					"Vegetarijanski"
+				],
+				"en": [
+					"Vegetarian"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "majoneza",
+			"categoryId": "Side",
+			"name": {
+				"hr": "Majoneza",
+				"en": "Majoneza"
+			},
+			"description": {
+				"hr": "Kremasta majoneza.",
+				"en": "Creamy egg-based mayonnaise condiment."
+			},
+			"price": "2.50",
+			"badges": {
+				"hr": [
+					"Vegetarijanski",
+					"Bez glutena"
+				],
+				"en": [
+					"Vegetarian",
+					"Gluten-free"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "odojak-300gr",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Odojak 300gr",
+				"en": "Odojak 300gr"
+			},
+			"description": {
+				"hr": "Pečena prasetina (porcija 300g).",
+				"en": "Succulent roasted suckling pig portion (300g)."
+			},
+			"price": "15.00",
+			"badges": {
+				"hr": [
+					"Meso"
+				],
+				"en": [
+					"Meat"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "papaline-sa-prilogom",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Papaline Sa Prilogom",
+				"en": "Papaline Sa Prilogom"
+			},
+			"description": {
+				"hr": "Pržene papaline poslužene s prilogom i limunom.",
+				"en": "Deep-fried sprats served with a side dish and lemon."
+			},
+			"price": "8.50",
+			"badges": {
+				"hr": [
+					"Riba"
+				],
+				"en": [
+					"Fish"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "pileci-batak-i-zab-u-lepinji",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Pileći Batak I Zab. U Lepinji",
+				"en": "Pileći Batak I Zab. U Lepinji"
+			},
+			"description": {
+				"hr": "Pileća prsa sa žara uz lepinju.",
+				"en": "Grilled chicken breast served with flatbread."
+			},
+			"price": "10.00",
+			"badges": {
+				"hr": [
+					"Roštilj"
+				],
+				"en": [
+					"Grill"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "pileci-file-sa-lepinjom",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Pileći File Sa Lepinjom",
+				"en": "Pileći File Sa Lepinjom"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "10.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "pileci-paprikas-tijesto",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Pileći Paprikaš Tijesto",
+				"en": "Pileći Paprikaš Tijesto"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "piletina-mexiko-riza",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Piletina Mexiko Riža",
+				"en": "Piletina Mexiko Riža"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "10.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "plata-dvije-zarulje-za-tri-os",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Plata \"Dvije Žarulje\" Za Tri OS.",
+				"en": "Plata \"Dvije Žarulje\" Za Tri OS."
+			},
+			"description": {
+				"hr": "10 ćevapa od 100% junetine, lepinja i luk.",
+				"en": "10 beef ćevapi, flatbread and onion."
+			},
+			"price": "50.00",
+			"badges": {
+				"hr": [
+					"Roštilj"
+				],
+				"en": [
+					"Grill"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "pljeskavica",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Pljeskavica",
+				"en": "Pljeskavica"
+			},
+			"description": {
+				"hr": "Pljeskavica od 100% junetine punjena špekom i sirom, lepinja i luk.",
+				"en": "Beef burger stuffed with bacon and cheese, served with flatbread and onion."
+			},
+			"price": "12.00",
+			"badges": {
+				"hr": [
+					"Roštilj"
+				],
+				"en": [
+					"Grill"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "pomfrit",
+			"categoryId": "Side",
+			"name": {
+				"hr": "Pomfrit",
+				"en": "Pomfrit"
+			},
+			"description": {
+				"hr": "Klasični prilog uz grill i pohana jela.",
+				"en": "A classic side for grill and fried dishes."
+			},
+			"price": "3.00",
+			"badges": {
+				"hr": [
+					"Dodatak"
+				],
+				"en": [
+					"Side"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "punjena-pljeskavica-kajmak-lep",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Punjena Pljeskavica Kajmak Lep.",
+				"en": "Punjena Pljeskavica Kajmak Lep."
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "11.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "riba-zar",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Riba Žar",
+				"en": "Riba Žar"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "14.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "salata-cikla",
+			"categoryId": "Salad",
+			"name": {
+				"hr": "Salata Cikla",
+				"en": "Salata Cikla"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "3.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "salata-pecena-paprika",
+			"categoryId": "Salad",
+			"name": {
+				"hr": "Salata Pečena Paprika",
+				"en": "Salata Pečena Paprika"
+			},
+			"description": {
+				"hr": "Pečene paprike s češnjakom, maslinovim uljem i malo ljute paprike.",
+				"en": "Roasted peppers with garlic, olive oil and a little hot pepper."
+			},
+			"price": "4.00",
+			"badges": {
+				"hr": [
+					"Povrće"
+				],
+				"en": [
+					"Vege"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "salata-rajcica",
+			"categoryId": "Salad",
+			"name": {
+				"hr": "Salata Rajčica",
+				"en": "Salata Rajčica"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "3.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "salata-zelena",
+			"categoryId": "Salad",
+			"name": {
+				"hr": "Salata Zelena",
+				"en": "Salata Zelena"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "3.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "salata-zelje",
+			"categoryId": "Salad",
+			"name": {
+				"hr": "Salata Zelje",
+				"en": "Salata Zelje"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "3.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "sarma",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Sarma",
+				"en": "Sarma"
+			},
+			"description": {
+				"hr": "Sarma od kiselog kupusa punjena mješavinom mesa i riže.",
+				"en": "Sour cabbage leaves stuffed with minced meat and rice."
+			},
+			"price": "9.50",
+			"badges": {
+				"hr": [
+					"Punjeno povrće"
+				],
+				"en": [
+					"Stuffed meat"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "senf",
+			"categoryId": "Side",
+			"name": {
+				"hr": "Senf",
+				"en": "Senf"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "2.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "svinjski-paprikas-tijesto",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Svinjski Paprikaš Tijesto",
+				"en": "Svinjski Paprikaš Tijesto"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "sis-cevapi-sa-lepinjom",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Šiš Ćevapi Sa Lepinjom",
+				"en": "Šiš Ćevapi Sa Lepinjom"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "10.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "spek-fileki",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Špek Fileki",
+				"en": "Špek Fileki"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "10.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-cobanac",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Čobanac",
+				"en": "Varivo Čobanac"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-grah-s-kobasicom",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo grah s kobasicom",
+				"en": "Varivo grah s kobasicom"
+			},
+			"description": {
+				"hr": "Grah varivo s kobasicom i začinima.",
+				"en": "Bean stew with sausage and seasoning."
+			},
+			"price": "10.00",
+			"badges": {
+				"hr": [
+					"Varivo"
+				],
+				"en": [
+					"Stew"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-grasak-noklice-me-so",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Grašak Noklice Me So.",
+				"en": "Varivo Grašak Noklice Me So."
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-kelj-krum-nok-me-so",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Kelj Krum. Nok. Me So.",
+				"en": "Varivo Kelj Krum. Nok. Me So."
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-krumpir-kockice-me-so",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Krumpir Kockice Me So.",
+				"en": "Varivo Krumpir Kockice Me So."
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-lovacki-gljive-noklice",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Lovački Gljive Noklice",
+				"en": "Varivo Lovački Gljive Noklice"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.00",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-sekeli-pire-me-so-sv",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Sekeli Pire Me So Sv.",
+				"en": "Varivo Sekeli Pire Me So Sv."
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "9.50",
+			"badges": {
+				"hr": [],
+				"en": []
+			},
+			"available": true
+		},
+		{
+			"id": "varivo-vinski-krumpir-meso",
+			"categoryId": "Main",
+			"name": {
+				"hr": "Varivo Vinski Krumpir Meso",
+				"en": "Varivo Vinski Krumpir Meso"
+			},
+			"description": {
+				"hr": "Vinski gulaš, krumpir i začini.",
+				"en": "Wine goulash, potatoes and seasoning."
+			},
+			"price": "10.00",
+			"badges": {
+				"hr": [
+					"Varivo"
+				],
+				"en": [
+					"Stew"
+				]
+			},
+			"available": true
+		},
+		{
+			"id": "vratina",
+			"categoryId": "Grill",
+			"name": {
+				"hr": "Vratina",
+				"en": "Vratina"
+			},
+			"description": {
+				"hr": "",
+				"en": ""
+			},
+			"price": "10.00",
 			"badges": {
 				"hr": [],
 				"en": []
