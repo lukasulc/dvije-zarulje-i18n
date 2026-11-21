@@ -34,6 +34,17 @@ The Worker needs these environment variables:
 - `CONTACT_TO_EMAIL` - the verified inbox that receives contact messages.
 - `CONTACT_FROM_EMAIL` - the sender on your Email Routing domain, for example
   `kontakt@dvije-zarulje.hr`.
+- `TURNSTILE_HOSTNAMES` - comma-separated allowed production hostnames:
+  `dvije-zarulje.hr,www.dvije-zarulje.hr`. Do not include local development
+  hostnames in the production value.
+- `TURNSTILE_SECRET` - the Turnstile widget secret. Add it as a Worker secret
+  in the Cloudflare dashboard; never put it in `wrangler.toml` or client code.
+
+The public Turnstile sitekey is embedded in both localized contact forms. The
+Worker verifies each submitted token, requires the `contact` action, and checks
+the returned hostname against `TURNSTILE_HOSTNAMES` before processing the
+honeypot or sending email. If verification settings are missing or Cloudflare
+cannot be reached, the submission is rejected.
 
 ## Contact Form Email
 
