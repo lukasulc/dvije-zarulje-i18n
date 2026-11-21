@@ -96,8 +96,14 @@ const t = useTranslations(locale);
           Website
           <input type="text" name="website" autocomplete="off" tabindex="-1" />
         </label>
+        <div
+          class="cf-turnstile"
+          data-turnstile
+          data-sitekey="0x4AAAAAAGMMlyKoWVG-d0e3"
+          data-action="contact"
+        ></div>
         <p class="cs-form-status" data-contact-status role="status" aria-live="polite"></p>
-        <button class="cs-button-solid" type="submit">{t("contact:cta")}</button
+        <button class="cs-button-solid" type="submit" disabled>{t("contact:cta")}</button
         >
       </form>
       <div class="cs-right-section">
@@ -133,6 +139,23 @@ const t = useTranslations(locale);
 </BaseLayout>
 
 <script is:inline>
+  window.onTurnstileLoad = () => {
+    document.querySelectorAll("form[data-success][data-error]").forEach((form) => {
+      const widget = form.querySelector("[data-turnstile]");
+      const button = form.querySelector('button[type="submit"]');
+
+      if (!widget || !button) {
+        return;
+      }
+
+      form.dataset.turnstileWidgetId = window.turnstile.render(widget, {
+        sitekey: widget.dataset.sitekey,
+        action: widget.dataset.action,
+      });
+      button.disabled = false;
+    });
+  };
+
   document.querySelectorAll("form[data-success][data-error]").forEach((form) => {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -173,6 +196,10 @@ const t = useTranslations(locale);
           status.dataset.state = "error";
         }
       } finally {
+        if (window.turnstile && form.dataset.turnstileWidgetId) {
+          window.turnstile.reset(form.dataset.turnstileWidgetId);
+        }
+
         if (button) {
           button.disabled = false;
           button.textContent = defaultButtonText;
@@ -181,6 +208,12 @@ const t = useTranslations(locale);
     });
   });
 </script>
+<script
+  is:inline
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit"
+  async
+  defer
+></script>
 
 <style lang="less">
   /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */

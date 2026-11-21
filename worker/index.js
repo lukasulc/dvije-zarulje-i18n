@@ -77,6 +77,72 @@ function buildRawEmail({ from, to, replyTo, subject, body }) {
 	return `${headers.join("\r\n")}\r\n\r\n${body}`;
 }
 
+async function verifyTurnstile(formData, request, env) {
+	const token = formData.get("cf-turnstile-response");
+	const expectedHostnames = new Set(
+		String(env.TURNSTILE_HOSTNAMES || "")
+			.split(",")
+			.map((hostname) => hostname.trim())
+			.filter(Boolean),
+	);
+
+	if (
+		typeof env.TURNSTILE_SECRET !== "string" ||
+		env.TURNSTILE_SECRET.length === 0 ||
+		expectedHostnames.size === 0
+	) {
+		console.error("Turnstile verification is not configured.", {
+			hasSecret: Boolean(env.TURNSTILE_SECRET),
+			hasExpectedHostnames: expectedHostnames.size > 0,
+		});
+		return false;
+	}
+
+	if (typeof token !== "string" || token.length === 0 || token.length > 2048) {
+		return false;
+	}
+
+	const body = new URLSearchParams({
+		secret: env.TURNSTILE_SECRET,
+		response: token,
+	});
+	const clientIp = request.headers.get("CF-Connecting-IP");
+	if (clientIp) {
+		body.set("remoteip", clientIp);
+	}
+
+	let result;
+	try {
+		const response = await fetch(
+			"https://challenges.cloudflare.com/turnstile/v0/siteverify",
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				signal: AbortSignal.timeout(10_000),
+				body,
+			},
+		);
+
+		if (!response.ok) {
+			console.error("Turnstile siteverify request failed.", { status: response.status });
+			return false;
+		}
+
+		result = await response.json();
+	} catch (error) {
+		console.error("Turnstile siteverify request failed.", {
+			message: error instanceof Error ? error.message : String(error),
+		});
+		return false;
+	}
+
+	return (
+		result?.success === true &&
+		result.action === "contact" &&
+		expectedHostnames.has(result.hostname)
+	);
+}
+
 async function handleContact(request, env) {
 	if (request.method !== "POST") {
 		return jsonResponse({ ok: false, message: "Method not allowed." }, 405);
@@ -85,6 +151,10 @@ async function handleContact(request, env) {
 	const formData = await request.formData();
 	const locale = formData.get("locale") === "en" ? "en" : "hr";
 	const copy = messages[locale];
+
+	if (!(await verifyTurnstile(formData, request, env))) {
+		return jsonResponse({ ok: false, message: copy.error }, 403);
+	}
 
 	if (clean(formData.get("website"), 200)) {
 		return jsonResponse({ ok: true, message: copy.success });
