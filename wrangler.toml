@@ -17,3 +17,14 @@ TURNSTILE_HOSTNAMES = "dvije-zarulje.hr,,www.dvije-zarulje.hr"
 
 [[send_email]]
 name = "EMAIL"
+
+[env.staging]
+name = "dvije-zarulje-staging"
+
+[[env.staging.routes]]
+pattern = "staging.dvije-zarulje.hr"
+custom_domain = true
+
+[env.staging.assets]
+directory = "dist"
+binding = "ASSETS"

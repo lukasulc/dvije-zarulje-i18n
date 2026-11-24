@@ -1,7 +1,8 @@
 ---
 import { googleAnalyticsId } from "@config/siteSettings";
 
-const measurementId = import.meta.env.PROD ? googleAnalyticsId : "";
+const measurementId =
+	import.meta.env.PROD && import.meta.env.PUBLIC_NOINDEX !== "true" ? googleAnalyticsId : "";
 ---
 
 {

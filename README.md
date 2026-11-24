@@ -537,7 +537,6 @@ Before going live, confirm the following are updated for your client's project:
 
 - **`astro.config.mjs`** — set the `site` field to your production URL
 - **`src/data/client.ts`** — fill in business name, address, phone, email, and social links
-- **`public/robots.txt`** — update the `Sitemap` URL to your production domain
 - **`public/assets/favicons/`** — replace placeholder favicons with the client's branding
 - **`public/admin/config.yml`** — complete the DecapBridge setup (see below) and set `site_url` to the production URL
 
@@ -551,6 +550,14 @@ Then deploy: Netlify is the recommended host. Navigate to your Netlify Admin Pan
 
 > [!NOTE]
 > If you choose a different host, update the `_redirects` file to match that host's 404 redirect syntax.
+
+### GitHub Actions Production and Staging
+
+The `main` branch deploys to the production Worker. The scheduled job also checks the production spreadsheet hourly, and pushes to `main` deploy immediately. Every push to `staging` deploys a separate Worker at `https://staging.dvije-zarulje.hr`.
+
+Create GitHub Actions environments named `Production` and `Staging`. Set `SPREADSHEET_ID` (and optionally `GOOGLE_SHEETS_GID`) in each environment; the two IDs can be the same or different. Set `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in both environments as well. Configure the `staging.dvije-zarulje.hr` custom domain in the Cloudflare zone.
+
+The staging build uses its own canonical URL and is marked `noindex`. Its Worker has no email binding, so contact form submissions are not sent from staging.
 
 ### Setting Up Decap CMS with DecapBridge
 
