@@ -2,7 +2,7 @@ export const SITE = {
 	title: "Dvije Žarulje",
 	tagline: "Grill i domaća jela u Zagrebu",
 	description: "Dvije Žarulje je zagrebački grill restoran i bistro u Središću, blizu jezera Bundek i parka Bundek, s grill ponudom, dnevnim jelima, pohanim jelima, salatama, jelom u lokalu, preuzimanjem i dostavom.",
-	url: "https://www.dvije-zarulje.hr",
+	url: import.meta.env.PUBLIC_SITE_URL || "https://www.dvije-zarulje.hr",
 	author: "Dvije Žarulje",
 	locale: "hr-HR",
 };

@@ -14,6 +14,10 @@ interface Props {
 }
 
 const { title = SITE.title, description = SITE.description, heroImage } = Astro.props;
+const robotsContent =
+	import.meta.env.PUBLIC_NOINDEX === "true"
+		? "noindex,follow"
+		: "index,follow,max-image-preview:large";
 
 // Data
 const localBusinessSchema = getLocalBusinessSchema(Astro.url.origin);
@@ -65,7 +69,7 @@ if (heroImage) {
 <!-- Standard Meta Tags -->
 <meta charset="utf-8" />
 <meta name="description" content={description} />
-<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="robots" content={robotsContent} />
 <meta name="web_author" content={SITE.author} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />

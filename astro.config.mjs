@@ -2,8 +2,10 @@ import { defineConfig, fontProviders } from "astro/config";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 
+const site = process.env.PUBLIC_SITE_URL || "https://www.dvije-zarulje.hr";
+
 export default defineConfig({
-	site: "https://www.dvije-zarulje.hr",
+	site,
 	i18n: {
 		defaultLocale: "hr",
 		locales: ["hr", "en"],
