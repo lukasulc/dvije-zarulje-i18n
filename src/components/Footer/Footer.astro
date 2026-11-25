@@ -53,11 +53,7 @@ const currentYear = getCurrentYear();
           </li>
           <li>
             <a href={getLocalizedRoute(locale,"/contact")}>
-              {BUSINESS.address.lineOne}<br />
-              {BUSINESS.address.lineTwo && <>{BUSINESS.address.lineTwo}<br /></>}
-              {BUSINESS.address.city}
-              {BUSINESS.address.state && ` ${BUSINESS.address.state}`}
-              {BUSINESS.address.zip}
+              {t("footer.click")}
             </a>
           </li>
           <li>
@@ -66,11 +62,15 @@ const currentYear = getCurrentYear();
               {BUSINESS.phoneFormatted}
             </a>
           </li>
-          {BUSINESS.email && (
-            <li>
-              <a href={`mailto:${BUSINESS.email}`}>{t("footer.click")}</a>
-            </li>
-          )}
+          <li>
+            <a href={BUSINESS.address.mapLink} target="_blank" rel="noopener">
+              {BUSINESS.address.lineOne}<br />
+              {BUSINESS.address.lineTwo && <>{BUSINESS.address.lineTwo}<br /></>}
+              {BUSINESS.address.city + ", "}
+              {BUSINESS.address.state && `${BUSINESS.address.state + ", "}`}
+              {BUSINESS.address.zip}
+            </a>
+          </li>
         </ul>
       </div>
     </section>

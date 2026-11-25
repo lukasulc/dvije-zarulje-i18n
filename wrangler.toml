@@ -13,7 +13,7 @@ binding = "ASSETS"
 [vars]
 CONTACT_TO_EMAIL = "contact@dvije-zarulje.hr"
 CONTACT_FROM_EMAIL = "no-reply@dvije-zarulje.hr"
-TURNSTILE_HOSTNAMES = "dvije-zarulje.hr,,www.dvije-zarulje.hr"
+TURNSTILE_HOSTNAMES = "dvije-zarulje.hr"
 
 [[send_email]]
 name = "EMAIL"
