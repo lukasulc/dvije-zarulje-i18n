@@ -9,9 +9,8 @@ export const SITE = {
 
 export const BUSINESS = {
 	name: "Dvije Žarulje",
-	email: "contact@dvije-zarulje.hr",
 	phoneForTel: "+385951999754",
-	phoneFormatted: "+385 95 199 9754",
+	phoneFormatted: " +385 95 199 9754",
 	logo: "/favicon.svg",
 	address: {
 		lineOne: "Ulica Brune Bušića 28",
