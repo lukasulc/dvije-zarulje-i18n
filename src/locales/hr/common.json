@@ -44,7 +44,8 @@
 		"contact": "Kontakt",
 		"click": "Pošalji email",
 		"p": "Dvije Žarulje poslužuje grill, dnevna jela, pohane klasike, salate i priloge u Središću, blizu Bundeka u Zagrebu.",
-		"credit": "Stranica za "
+		"credit": "Stranica za ",
+    	"developedBy": "Izradio "
 	},
 	"notFound": {
 		"pageNotFound": "404 - Stranica koju tražite ne postoji.",

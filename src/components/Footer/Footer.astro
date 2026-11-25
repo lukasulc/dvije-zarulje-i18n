@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { BUSINESS } from "@data/client";
+import { BUSINESS, DEVELOPER } from "@data/client";
 import navData from "@data/navData.json";
 import { getCurrentYear } from "@js/utils";
 import { getLocaleFromUrl } from "@js/localeUtils";
@@ -53,11 +53,7 @@ const currentYear = getCurrentYear();
           </li>
           <li>
             <a href={getLocalizedRoute(locale,"/contact")}>
-              {BUSINESS.address.lineOne}<br />
-              {BUSINESS.address.lineTwo && <>{BUSINESS.address.lineTwo}<br /></>}
-              {BUSINESS.address.city}
-              {BUSINESS.address.state && ` ${BUSINESS.address.state}`}
-              {BUSINESS.address.zip}
+              {t("footer.click")}
             </a>
           </li>
           <li>
@@ -66,11 +62,15 @@ const currentYear = getCurrentYear();
               {BUSINESS.phoneFormatted}
             </a>
           </li>
-          {BUSINESS.email && (
-            <li>
-              <a href={`mailto:${BUSINESS.email}`}>{t("footer.click")}</a>
-            </li>
-          )}
+          <li>
+            <a href={BUSINESS.address.mapLink} target="_blank" rel="noopener">
+              {BUSINESS.address.lineOne}<br />
+              {BUSINESS.address.lineTwo && <>{BUSINESS.address.lineTwo}<br /></>}
+              {BUSINESS.address.city + ", "}
+              {BUSINESS.address.state && `${BUSINESS.address.state + ", "}`}
+              {BUSINESS.address.zip}
+            </a>
+          </li>
         </ul>
       </div>
     </section>
@@ -79,7 +79,11 @@ const currentYear = getCurrentYear();
   <section class="credit">
     <span>{t("footer.credit")}</span>
     <a href={getLocalizedRoute(locale,"/")} target="_blank" rel="noopener">{BUSINESS.name}</a>
-    <span class="copyright"> Copyright {currentYear}</span>
+    <span class="copyright">© {currentYear}</span>
+    <span class="developer">
+      {t("footer.developedBy")}
+      <a href={DEVELOPER.url} target="_blank" rel="author noopener external">{DEVELOPER.name}</a>
+    </span>
   </section>
 </footer>
 
@@ -234,6 +238,14 @@ const currentYear = getCurrentYear();
           display: block;
         }
 
+        .developer {
+          font-size: (16/16rem);
+
+          a {
+            display: inline;
+          }
+        }
+
         .settings {
           display: flex;
         }
@@ -327,9 +339,16 @@ const currentYear = getCurrentYear();
       .credit {
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 0.5em;
+        row-gap: 0.25em;
 
         .copyright {
           display: inline-block;
+        }
+
+        .developer {
+          margin-left: auto;
         }
       }
     }
