@@ -1,4 +1,4 @@
-import { SITE, BUSINESS } from "@data/client";
+import { SITE, BUSINESS, DEVELOPER } from "@data/client";
 
 export function getLocalBusinessSchema(origin) {
   const sameAs = [];
@@ -7,6 +7,7 @@ export function getLocalBusinessSchema(origin) {
 
   const businessId = `${SITE.url}/#restaurant`;
   const websiteId = `${SITE.url}/#website`;
+  const developerId = `${DEVELOPER.url}#person`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -18,6 +19,9 @@ export function getLocalBusinessSchema(origin) {
         url: SITE.url,
         description: SITE.description,
         inLanguage: ["hr-HR", "en-US"],
+        creator: {
+          "@id": developerId,
+        },
         publisher: {
           "@id": businessId,
         },
@@ -88,6 +92,12 @@ export function getLocalBusinessSchema(origin) {
           "Dvije Zarulje, Dvije Žarulje, grill Zagreb, rostilj Zagreb, cevapi Zagreb, daily menu Zagreb, dnevna jela Zagreb, Bundek, Sredisce, Ulica Brune Bušića 28, Ulica Brune Busica 28",
         sameAs,
         inLanguage: SITE.locale,
+      },
+      {
+        "@type": "Person",
+        "@id": developerId,
+        name: DEVELOPER.name,
+        url: DEVELOPER.url,
       },
       {
         "@type": "Place",
